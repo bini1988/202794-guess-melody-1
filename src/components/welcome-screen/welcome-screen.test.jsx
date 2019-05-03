@@ -7,7 +7,7 @@ it(`WelcomeScreen correctly renders default markup`, () => {
     .create(
         <WelcomeScreen
           maxTime={5}
-          maxErrors={3}/>
+          maxMistakes={3}/>
     ).toJSON();
 
   expect(tree).toMatchSnapshot();
