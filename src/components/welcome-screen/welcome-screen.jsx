@@ -18,7 +18,7 @@ const WelcomeScreen = (props) => {
         <li>{`За ${maxTime} минут нужно ответить на все вопросы.`}</li>
         <li>{`Можно допустить ${maxMistakes} ошибки.`}</li>
       </ul>
-      <p className="welcome__text">Удачи!</p>
+      <p className="welcome__text">{`Удачи!`}</p>
     </section>
   );
 };
