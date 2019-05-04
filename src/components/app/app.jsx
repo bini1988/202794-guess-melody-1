@@ -2,7 +2,9 @@ import React from "react";
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 
 const App = () => (
-  <WelcomeScreen/>
+  <WelcomeScreen
+    maxTime={5}
+    maxErrors={3}/>
 );
 
 export default App;
