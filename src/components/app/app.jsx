@@ -4,7 +4,7 @@ import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 const App = () => (
   <WelcomeScreen
     maxTime={5}
-    maxErrors={3}/>
+    maxMistakes={3}/>
 );
 
 export default App;
