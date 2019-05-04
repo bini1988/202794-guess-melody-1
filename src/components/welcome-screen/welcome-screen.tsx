@@ -1,7 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, {MouseEvent} from "react";
 
-const WelcomeScreen = (props) => {
+export interface WelcomeScreenProps {
+  /** Игровое время, мин */
+  maxTime: number;
+  /** Количество допустимых ошибок */
+  maxMistakes: number;
+  /** Обработчки клика по кнопке запуска игры */
+  onBeginClick?: (event: MouseEvent<HTMLElement>) => void;
+}
+
+const WelcomeScreen = (props: WelcomeScreenProps): JSX.Element => {
   const {maxTime, maxMistakes, onBeginClick} = props;
 
   return (
@@ -21,15 +29,6 @@ const WelcomeScreen = (props) => {
       <p className="welcome__text">{`Удачи!`}</p>
     </section>
   );
-};
-
-WelcomeScreen.propTypes = {
-  /** Игровое время, мин */
-  maxTime: PropTypes.number.isRequired,
-  /** Количество допустимых ошибок */
-  maxMistakes: PropTypes.number.isRequired,
-  /** Обработчки клика по кнопке запуска игры */
-  onBeginClick: PropTypes.func,
 };
 
 export default WelcomeScreen;

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import WelcomeScreen from "./welcome-screen.jsx";
+import WelcomeScreen from "./welcome-screen";
 
 it(`WelcomeScreen correctly renders default markup`, () => {
   const tree = renderer
