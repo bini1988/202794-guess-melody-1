@@ -7,7 +7,9 @@
     "build": "webpack --mode development",
     "start": "webpack-dev-server",
     "eslint": "eslint src/**/*.js src/**/*.tsx",
-    "test": "npm run eslint && jest"
+    "ts:check": "tsc --noEmit",
+    "ts:watch": "npm run ts:check -- --watch",
+    "test": "npm run eslint && jest && tsc --noEmit"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
