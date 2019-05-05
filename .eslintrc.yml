@@ -4,7 +4,11 @@ env:
   commonjs: true
   jest: true
 
-extends: ['htmlacademy/es6', 'plugin:react/recommended']
+extends: ['plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'htmlacademy/es6']
+
+rules:
+  '@typescript-eslint/indent': 'off'
+  '@typescript-eslint/explicit-function-return-type': 'off'
 
 parserOptions:
   ecmaFeatures:
@@ -17,3 +21,4 @@ plugins: ['react']
 settings:
   react:
     version: '16'
+
