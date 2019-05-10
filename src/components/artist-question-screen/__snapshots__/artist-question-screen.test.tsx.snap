@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistQuestionScreen correctly renders default markup 1`] = `
+<section
+  className="game__screen"
+>
+  <h2
+    className="game__title"
+  >
+    Кто исполняет эту песню?
+  </h2>
+  <div
+    className="game__track"
+  >
+    <button
+      className="track__button track__button--play"
+      type="button"
+    />
+    <audio>
+      <source
+        src=""
+        type="audio/ogg; codecs=vorbis"
+      />
+    </audio>
+  </div>
+  <form
+    className="game__artist"
+    onChange={[Function]}
+  >
+    <div
+      className="artist"
+    >
+      <input
+        className="artist__input visually-hidden"
+        id="artist-0"
+        name="answer"
+        type="radio"
+        value="artist#1"
+      />
+      <label
+        className="artist__name"
+        htmlFor="artist-0"
+      >
+        <img
+          alt="artist#1"
+          className="artist__picture"
+          src=""
+        />
+        artist#1
+      </label>
+    </div>
+    <div
+      className="artist"
+    >
+      <input
+        className="artist__input visually-hidden"
+        id="artist-1"
+        name="answer"
+        type="radio"
+        value="artist#2"
+      />
+      <label
+        className="artist__name"
+        htmlFor="artist-1"
+      >
+        <img
+          alt="artist#2"
+          className="artist__picture"
+          src=""
+        />
+        artist#2
+      </label>
+    </div>
+    <div
+      className="artist"
+    >
+      <input
+        className="artist__input visually-hidden"
+        id="artist-2"
+        name="answer"
+        type="radio"
+        value="artist#3"
+      />
+      <label
+        className="artist__name"
+        htmlFor="artist-2"
+      >
+        <img
+          alt="artist#3"
+          className="artist__picture"
+          src=""
+        />
+        artist#3
+      </label>
+    </div>
+  </form>
+</section>
+`;
