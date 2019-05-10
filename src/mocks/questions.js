@@ -25,13 +25,13 @@ export default [
     },
     answers: [
       {
-        picture: `http://placehold.it/134x134`,
+        picture: `https://i.pravatar.cc/134x134`,
         artist: `John Snow`,
       }, {
-        picture: `http://placehold.it/134x134`,
+        picture: `https://i.pravatar.cc/134x134`,
         artist: `Jack Daniels`,
       }, {
-        picture: `http://placehold.it/134x134`,
+        picture: `https://i.pravatar.cc/134x134`,
         artist: `Jim Beam`,
       },
     ],
