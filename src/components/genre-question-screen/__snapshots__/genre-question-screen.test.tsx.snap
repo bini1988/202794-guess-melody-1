@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenreQuestionScreen correctly renders default markup 1`] = `
+<section
+  className="game__screen"
+>
+  <h2
+    className="game__title"
+  >
+    Выберите rock треки
+  </h2>
+  <form
+    className="game__tracks"
+    onSubmit={[Function]}
+  >
+    <div
+      className="track"
+    >
+      <button
+        className="track__button track__button--play"
+        type="button"
+      />
+      <div
+        className="track__status"
+      >
+        <audio>
+          <source
+            src=""
+            type="audio/ogg; codecs=vorbis"
+          />
+        </audio>
+      </div>
+      <div
+        className="game__answer"
+      >
+        <input
+          className="game__input visually-hidden"
+          id="answer-0"
+          name="answer"
+          type="checkbox"
+          value="rock"
+        />
+        <label
+          className="game__check"
+          htmlFor="answer-0"
+        >
+          Отметить
+        </label>
+      </div>
+    </div>
+    <div
+      className="track"
+    >
+      <button
+        className="track__button track__button--play"
+        type="button"
+      />
+      <div
+        className="track__status"
+      >
+        <audio>
+          <source
+            src=""
+            type="audio/ogg; codecs=vorbis"
+          />
+        </audio>
+      </div>
+      <div
+        className="game__answer"
+      >
+        <input
+          className="game__input visually-hidden"
+          id="answer-1"
+          name="answer"
+          type="checkbox"
+          value="jazz"
+        />
+        <label
+          className="game__check"
+          htmlFor="answer-1"
+        >
+          Отметить
+        </label>
+      </div>
+    </div>
+    <button
+      className="game__submit button"
+      type="submit"
+    >
+      Ответить
+    </button>
+  </form>
+</section>
+`;
