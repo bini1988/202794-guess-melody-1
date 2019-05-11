@@ -32,7 +32,7 @@ class GameScreen extends PureComponent<GameScreenProps> {
   }
 
   private _renderHeader() {
-    const {time = 0, mistakes = 3} = this.props;
+    const {time, mistakes} = this.props;
     const timeMinutes = Math.trunc(time / 60);
     const timeSeconds = time - timeMinutes * 60;
 
@@ -80,12 +80,12 @@ class GameScreen extends PureComponent<GameScreenProps> {
     switch (question.type) {
       case QuestionTypes.Artist:
         return <ArtistQuestionScreen
-          {...question as ArtistQuestion}
+          question={question as ArtistQuestion}
           index={questionIndex}
           onAnswer={onAnswer}/>;
       case QuestionTypes.Genre:
         return <GenreQuestionScreen
-          {...question as GenreQuestion}
+          question={question as GenreQuestion}
           index={questionIndex}
           onAnswer={onAnswer}/>;
     }

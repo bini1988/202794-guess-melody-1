@@ -1,7 +1,7 @@
 import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import {TrackGenres} from "../../types.d";
+import {QuestionTypes, TrackGenres} from "../../types.d";
 import GenreQuestionScreen from "./genre-question-screen";
 
 configure({adapter: new Adapter()});
@@ -9,17 +9,20 @@ configure({adapter: new Adapter()});
 describe(`GenreQuestionScreen`, () => {
   it(`should call onAnswer with user answer`, () => {
     const index = 10;
-    const answersMock = [
-      {src: ``, genre: TrackGenres.Rock},
-      {src: ``, genre: TrackGenres.Jazz}
-    ];
+    const questionMock = {
+      type: QuestionTypes.Genre,
+      genre: TrackGenres.Rock,
+      answers: [
+        {src: ``, genre: TrackGenres.Rock},
+        {src: ``, genre: TrackGenres.Jazz}
+      ]
+    };
     const preventDefault = jest.fn();
     const hanleAnswer = jest.fn();
     const wrapper = mount(
         <GenreQuestionScreen
           index={index}
-          genre={TrackGenres.Rock}
-          answers={answersMock}
+          question={questionMock}
           onAnswer={hanleAnswer}/>
     );
 

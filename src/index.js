@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app";
-import questions from "./mocks/questions";
-import {maxTime, maxMistakes} from "./mocks/settings";
+import {maxTime, maxMistakes, questions} from "./mocks/game";
 
 ReactDOM.render(
     <App

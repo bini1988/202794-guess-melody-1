@@ -1,19 +1,18 @@
 import React from "react";
-import {ArtistSong, ArtistAnswer} from "../../types.d";
+import {ArtistQuestion} from "../../types.d";
 
 export interface ArtistQuestionScreenProps {
   /** Порядковый индекс */
   index: number;
-  /** Жанр определяемого трека */
-  song: ArtistSong;
-  /** Варианты ответов */
-  answers: ArtistAnswer[];
+  /** Объект вопроса */
+  question: ArtistQuestion;
   /** Обработчик выбора варианта ответов */
   onAnswer?: (result: { index: number; answer: string }) => void;
 }
 
 const ArtistQuestionScreen = (props: ArtistQuestionScreenProps): JSX.Element => {
-  const {song, answers = [], onAnswer = () => {}} = props;
+  const {question, onAnswer = () => {}} = props;
+  const {song, answers = []} = question;
 
   return (
     <section className="game__screen">

@@ -1,19 +1,18 @@
 import React from "react";
-import {TrackGenres, GenreAnswer} from "../../types.d";
+import {GenreQuestion} from "../../types.d";
 
 export interface GenreQuestionScreenProps {
   /** Порядковый индекс */
   index: number;
-  /** Жанр определяемого трека */
-  genre: TrackGenres;
-  /** Варианты ответов */
-  answers: GenreAnswer[];
+  /** Объект вопроса */
+  question: GenreQuestion;
   /** Обработчик выбора вариантов ответов */
   onAnswer?: (result: { index: number; answer: string[] }) => void;
 }
 
 const GenreQuestionScreen = (props: GenreQuestionScreenProps): JSX.Element => {
-  const {genre, answers = [], onAnswer = () => {}} = props;
+  const {question, onAnswer = () => {}} = props;
+  const {genre, answers = []} = question;
 
   return (
     <section className="game__screen">
