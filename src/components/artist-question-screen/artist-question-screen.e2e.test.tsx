@@ -33,9 +33,8 @@ describe(`ArtistQuestionScreen`, () => {
 
     const gameAnswer = gameForm.find(`#artist-${answerIndex}`);
     expect(gameAnswer).toHaveLength(1);
-    const value = gameAnswer.prop(`value`);
 
-    gameForm.simulate(`change`, {target: {value}});
+    gameForm.simulate(`change`, {target: gameAnswer.getDOMNode()});
 
     expect(hanleAnswer).toHaveBeenCalledTimes(1);
     expect(hanleAnswer).toHaveBeenCalledWith({index, answer});
