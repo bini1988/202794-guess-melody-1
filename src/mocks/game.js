@@ -1,4 +1,7 @@
-export default [
+
+export const maxTime = 5;
+export const maxMistakes = 3;
+export const questions = [
   {
     type: `genre`,
     genre: `rock`,
