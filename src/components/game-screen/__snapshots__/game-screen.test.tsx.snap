@@ -107,9 +107,11 @@ exports[`GameScreen correctly renders default markup 1`] = `
           className="game__answer"
         >
           <input
+            checked={false}
             className="game__input visually-hidden"
             id="answer-0"
             name="answer"
+            onChange={[Function]}
             type="checkbox"
             value="rock"
           />
@@ -142,9 +144,11 @@ exports[`GameScreen correctly renders default markup 1`] = `
           className="game__answer"
         >
           <input
+            checked={false}
             className="game__input visually-hidden"
             id="answer-1"
             name="answer"
+            onChange={[Function]}
             type="checkbox"
             value="jazz"
           />

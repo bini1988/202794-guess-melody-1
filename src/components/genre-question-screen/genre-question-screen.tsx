@@ -1,4 +1,4 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import {GenreQuestion} from "../../types.d";
 
 export interface GenreQuestionScreenProps {
@@ -9,61 +9,88 @@ export interface GenreQuestionScreenProps {
   /** Обработчик выбора вариантов ответов */
   onAnswer?: (result: { index: number; answer: string[] }) => void;
 }
+export interface GenreQuestionScreenState {
+  answers: { [key: string]: boolean };
+}
 
-const GenreQuestionScreen = (props: GenreQuestionScreenProps): JSX.Element => {
-  const {question, onAnswer = () => {}} = props;
-  const {genre, answers = []} = question;
+class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQuestionScreenState> {
+  public constructor(props: GenreQuestionScreenProps) {
+    super(props);
 
-  return (
-    <section className="game__screen">
-      <h2 className="game__title">
-        {`Выберите ${genre} треки`}
-      </h2>
-      <form
-        className="game__tracks"
-        onSubmit={(event) => {
-          event.preventDefault();
-          const form = event.target as HTMLFormElement;
-          const answerElements = form.elements.namedItem(`answer`) as unknown;
+    this.state = {
+      answers: {},
+    };
 
-          if (answerElements) {
-            const {index} = props;
-            const answer = Array.from(answerElements as HTMLInputElement[])
-              .filter((it) => it.checked)
-              .map((it) => it.value);
+    this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleAnswerWith = this._handleAnswerWith.bind(this);
+  }
 
-            onAnswer({index, answer});
-          }
-        }}>
-        {answers.map((it, index: number) => (
-          <div className="track" key={`answer-${index}`}>
-            <button className="track__button track__button--play" type="button"/>
-            <div className="track__status">
-              <audio>
-                <source src={it.src} type="audio/ogg; codecs=vorbis"/>
-              </audio>
+  public render() {
+    const {answers} = this.state;
+    const {question} = this.props;
+
+    return (
+      <section className="game__screen">
+        <h2 className="game__title">
+          {`Выберите ${question.genre} треки`}
+        </h2>
+        <form
+          className="game__tracks"
+          onSubmit={this._handleSubmit}>
+          {question.answers.map((it, index: number) => (
+            <div className="track" key={`answer-${index}`}>
+              <button className="track__button track__button--play" type="button"/>
+              <div className="track__status">
+                <audio>
+                  <source src={it.src} type="audio/ogg; codecs=vorbis"/>
+                </audio>
+              </div>
+              <div className="game__answer">
+                <input
+                  className="game__input visually-hidden"
+                  type="checkbox"
+                  name="answer"
+                  id={`answer-${index}`}
+                  value={it.genre}
+                  checked={Boolean(answers[`answer-${index}`])}
+                  onChange={this._handleAnswerWith(`answer-${index}`)}/>
+                <label
+                  className="game__check"
+                  htmlFor={`answer-${index}`}>
+                  {`Отметить`}
+                </label>
+              </div>
             </div>
-            <div className="game__answer">
-              <input
-                className="game__input visually-hidden"
-                type="checkbox"
-                name="answer"
-                id={`answer-${index}`}
-                value={it.genre}/>
-              <label
-                className="game__check"
-                htmlFor={`answer-${index}`}>
-                {`Отметить`}
-              </label>
-            </div>
-          </div>
-        ))}
-        <button className="game__submit button" type="submit">
-          {`Ответить`}
-        </button>
-      </form>
-    </section>
-  );
-};
+          ))}
+          <button className="game__submit button" type="submit">
+            {`Ответить`}
+          </button>
+        </form>
+      </section>
+    );
+  }
+
+  private _handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const {answers} = this.state;
+    const {index, question, onAnswer} = this.props;
+    const answer = question.answers
+      .filter((it, itIndex) => answers[`answer-${itIndex}`])
+      .map((it) => it.genre);
+
+    if (onAnswer) {
+      onAnswer({index, answer});
+    }
+  }
+
+  private _handleAnswerWith(index: string) {
+    return () => {
+      this.setState(({answers}) => ({
+        answers: {...answers, [index]: !answers[index]}
+      }));
+    };
+  }
+}
 
 export default GenreQuestionScreen;

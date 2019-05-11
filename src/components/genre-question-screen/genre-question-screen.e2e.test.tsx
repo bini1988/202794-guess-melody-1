@@ -29,18 +29,18 @@ describe(`GenreQuestionScreen`, () => {
     const gameForm = wrapper.find(`.game__tracks`);
     expect(gameForm).toHaveLength(1);
 
-    gameForm.simulate(`submit`, {
-      preventDefault,
-      target: {
-        elements: {
-          namedItem: () => [
-            {checked: true, value: TrackGenres.Rock},
-            {checked: true, value: TrackGenres.Jazz},
-          ]
-        },
-      }
+    questionMock.answers.forEach((it, itIndex) => {
+      const gameInput = gameForm.find(`.game__input[id='answer-${itIndex}']`);
+      expect(gameInput).toHaveLength(1);
+
+      gameInput.simulate(`change`);
     });
+
+    gameForm.simulate(`submit`, {preventDefault});
+
     expect(preventDefault).toHaveBeenCalledTimes(1);
-    expect(hanleAnswer).toHaveBeenCalledWith({index, answer: [TrackGenres.Rock, TrackGenres.Jazz]});
+    expect(hanleAnswer).toHaveBeenCalledWith({
+      index, answer: questionMock.answers.map((it) => it.genre)
+    });
   });
 });
