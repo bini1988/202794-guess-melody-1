@@ -1,5 +1,5 @@
 import React, {PureComponent} from "react";
-import {GameQuestion, QuestionTypes, GenreQuestion, ArtistQuestion} from "../../types.d";
+import {GameQuestion, QuestionTypes} from "../../types.d";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen";
 
@@ -69,6 +69,10 @@ class GameScreen extends PureComponent<GameScreenProps> {
     );
   }
 
+  private _throw(arg: never) {
+    throw new Error(arg);
+  }
+
   private _renderQuestion() {
     const {questions, questionIndex, onAnswer} = this.props;
     const question = questions[questionIndex];
@@ -80,17 +84,17 @@ class GameScreen extends PureComponent<GameScreenProps> {
     switch (question.type) {
       case QuestionTypes.Artist:
         return <ArtistQuestionScreen
-          question={question as ArtistQuestion}
+          question={question}
           index={questionIndex}
           onAnswer={onAnswer}/>;
       case QuestionTypes.Genre:
         return <GenreQuestionScreen
-          question={question as GenreQuestion}
+          question={question}
           index={questionIndex}
           onAnswer={onAnswer}/>;
     }
 
-    return null;
+    return this._throw(question);
   }
 }
 

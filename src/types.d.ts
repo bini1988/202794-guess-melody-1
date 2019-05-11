@@ -48,7 +48,7 @@ export interface GenreAnswer {
  */
 export interface GenreQuestion {
   /** Тип вопроса */
-  type: QuestionTypes;
+  type: QuestionTypes.Genre;
   /** Жанр композиции */
   genre: TrackGenres;
   /** Варианты ответов */
@@ -78,7 +78,7 @@ export interface ArtistAnswer {
  */
 export interface ArtistQuestion {
   /** Тип вопроса */
-  type: QuestionTypes;
+  type: QuestionTypes.Artist;
   /** Композиция */
   song: ArtistSong;
   /** Варианты ответов */

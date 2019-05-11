@@ -2,11 +2,11 @@ import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import App from "./app";
-import {TrackGenres, QuestionTypes} from "../../types.d";
+import {TrackGenres, QuestionTypes, GameQuestion} from "../../types.d";
 
 configure({adapter: new Adapter()});
 
-const questionsMock = [
+const questionsMock: GameQuestion[] = [
   {
     type: QuestionTypes.Genre,
     genre: TrackGenres.Rock,

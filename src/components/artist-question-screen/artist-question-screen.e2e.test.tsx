@@ -1,7 +1,7 @@
 import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import {QuestionTypes} from "../../types.d";
+import {QuestionTypes, GameQuestion} from "../../types.d";
 import ArtistQuestionScreen from "./artist-question-screen";
 
 configure({adapter: new Adapter()});
@@ -10,7 +10,7 @@ describe(`ArtistQuestionScreen`, () => {
   it(`should call onAnswer with user answer`, () => {
     const index = 10;
     const answerIndex = 1;
-    const questionMock = {
+    const questionMock: GameQuestion = {
       type: QuestionTypes.Artist,
       song: {artist: `artist#1`, src: ``},
       answers: [

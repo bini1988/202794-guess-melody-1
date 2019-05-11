@@ -1,7 +1,7 @@
 import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import {QuestionTypes, TrackGenres} from "../../types.d";
+import {QuestionTypes, TrackGenres, GameQuestion} from "../../types.d";
 import GenreQuestionScreen from "./genre-question-screen";
 
 configure({adapter: new Adapter()});
@@ -9,7 +9,7 @@ configure({adapter: new Adapter()});
 describe(`GenreQuestionScreen`, () => {
   it(`should call onAnswer with user answer`, () => {
     const index = 10;
-    const questionMock = {
+    const questionMock: GameQuestion = {
       type: QuestionTypes.Genre,
       genre: TrackGenres.Rock,
       answers: [
