@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import GameScreen from "./game-screen";
 import {TrackGenres, QuestionTypes, GameQuestion} from "../../types.d";
-import App from "./app";
 
 const questionsMock: GameQuestion[] = [
   {
@@ -21,13 +21,17 @@ const questionsMock: GameQuestion[] = [
   }
 ];
 
-it(`App correctly renders default markup`, () => {
+it(`GameScreen correctly renders default markup`, () => {
+  const handleAnswer = () => {};
+
   const tree = renderer
     .create(
-        <App
-          maxTime={5}
-          maxMistakes={3}
-          questions={questionsMock}/>
+        <GameScreen
+          questions={questionsMock}
+          questionIndex={0}
+          time={5}
+          mistakes={3}
+          onAnswer={handleAnswer}/>
     ).toJSON();
 
   expect(tree).toMatchSnapshot();

@@ -16,6 +16,7 @@ exports[`App correctly renders default markup 1`] = `
   </div>
   <button
     className="welcome__button"
+    onClick={[Function]}
   >
     <span
       className="visually-hidden"
