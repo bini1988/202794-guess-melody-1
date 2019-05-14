@@ -642,6 +642,7 @@ img {
   margin-bottom: 30px; }
 
 .game__answer {
+  margin-left: 15px;
   width: 35px;
   height: 49px; }
 
@@ -669,17 +670,8 @@ img {
   font-size: 24px; }
 
 .game__track {
-  margin-bottom: 120px;
   width: 100%;
-  height: 55px;
-  text-align: left;
-  background-image: url("../img/player-background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-animation: fadein 1000ms ease-out;
-          animation: fadein 1000ms ease-out;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1; }
+  display: flex; }
 
 @-webkit-keyframes fadein {
   0% {
@@ -695,7 +687,8 @@ img {
 
 .game__artist {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 120px; }
 
 /*
  * Стили для игрового таймера
@@ -788,8 +781,8 @@ img {
     background-position: -5px -294px; }
 
 .track__status {
-  width: 330px;
   height: 55px;
+  flex-grow: 1;
   background-image: url("../img/player-background.png");
   background-repeat: no-repeat;
   background-size: cover;
