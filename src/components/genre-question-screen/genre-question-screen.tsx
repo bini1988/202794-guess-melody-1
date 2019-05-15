@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
 import {GenreQuestion} from "../../types.d";
+import AudioPlayer from "../audio-player/audio-player";
 
 export interface GenreQuestionScreenProps {
   /** Порядковый индекс */
@@ -11,6 +12,7 @@ export interface GenreQuestionScreenProps {
 }
 export interface GenreQuestionScreenState {
   answers: { [key: string]: boolean };
+  activePlayerIndex: number;
 }
 
 class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQuestionScreenState> {
@@ -19,14 +21,17 @@ class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQ
 
     this.state = {
       answers: {},
+      activePlayerIndex: -1,
     };
 
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleAnswerWith = this._handleAnswerWith.bind(this);
+    this._handlePlayerPlayWith = this._handlePlayerPlayWith.bind(this);
+    this._handlePlayerPause = this._handlePlayerPause.bind(this);
   }
 
   public render() {
-    const {answers} = this.state;
+    const {answers, activePlayerIndex} = this.state;
     const {question} = this.props;
 
     return (
@@ -39,12 +44,11 @@ class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQ
           onSubmit={this._handleSubmit}>
           {question.answers.map((it, index: number) => (
             <div className="track" key={`answer-${index}`}>
-              <button className="track__button track__button--play" type="button"/>
-              <div className="track__status">
-                <audio>
-                  <source src={it.src} type="audio/ogg; codecs=vorbis"/>
-                </audio>
-              </div>
+              <AudioPlayer
+                src={it.src}
+                isPlaying={activePlayerIndex === index}
+                onPlay={this._handlePlayerPlayWith(index)}
+                onPause={this._handlePlayerPause}/>
               <div className="game__answer">
                 <input
                   className="game__input visually-hidden"
@@ -90,6 +94,16 @@ class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQ
         answers: {...answers, [index]: !answers[index]}
       }));
     };
+  }
+
+  private _handlePlayerPlayWith(index: number) {
+    return () => {
+      this.setState({activePlayerIndex: index});
+    };
+  }
+
+  private _handlePlayerPause() {
+    this.setState({activePlayerIndex: -1});
   }
 }
 
