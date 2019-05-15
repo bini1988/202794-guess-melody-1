@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AudioPlayer correctly renders default markup 1`] = `
+<div
+  className="game__track"
+>
+  <button
+    className="track__button track__button--play"
+    onClick={[Function]}
+    type="button"
+  />
+  <div
+    className="track__status"
+  >
+    <audio
+      onCanPlayThrough={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onTimeUpdate={[Function]}
+      src=""
+    />
+    <div
+      className="track__progress"
+      style={
+        Object {
+          "background": "#707070",
+          "height": "2px",
+          "marginTop": "55px",
+          "width": "0%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
