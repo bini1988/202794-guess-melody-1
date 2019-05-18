@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
-import {GameQuestion, QuestionTypes} from "../../types.d";
+import {GameQuestion, GameAnswer, QuestionTypes} from "../../types.d";
+import GameMistakes from "../game-mistakes/game-mistakes";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen";
 
@@ -13,7 +14,7 @@ export interface GameScreenProps {
   /** Количество совершенных ошибок */
   mistakes: number;
   /** Обработчик выбора варианта ответов */
-  onAnswer: (result: { index: number; answer: string | string[] }) => void;
+  onAnswer: (answer: GameAnswer[]) => void;
 }
 
 class GameScreen extends PureComponent<GameScreenProps> {
@@ -60,11 +61,8 @@ class GameScreen extends PureComponent<GameScreenProps> {
             {`${timeSeconds}`.padStart(2, `0`)}
           </span>
         </div>
-        <div className="game__mistakes">
-          {Array.from(new Array(mistakes)).map((it, index) => (
-            <div key={index} className="wrong"/>
-          ))}
-        </div>
+        <GameMistakes
+          mistakes={mistakes}/>
       </header>
     );
   }
@@ -84,13 +82,13 @@ class GameScreen extends PureComponent<GameScreenProps> {
     switch (question.type) {
       case QuestionTypes.Artist:
         return <ArtistQuestionScreen
+          key={`question-${questionIndex}`}
           question={question}
-          index={questionIndex}
           onAnswer={onAnswer}/>;
       case QuestionTypes.Genre:
         return <GenreQuestionScreen
+          key={`question-${questionIndex}`}
           question={question}
-          index={questionIndex}
           onAnswer={onAnswer}/>;
     }
 
