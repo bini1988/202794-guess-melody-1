@@ -99,3 +99,8 @@ export interface ArtistQuestion {
  * Внутриигровой вопрос
  */
 export type GameQuestion = (GenreQuestion|ArtistQuestion);
+
+/**
+ * Внутриигровой ответ
+ */
+export type GameAnswer = (GenreAnswer|ArtistAnswer);
