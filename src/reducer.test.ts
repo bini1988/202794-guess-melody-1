@@ -94,6 +94,23 @@ describe(`App Reducer`, () => {
     expect(question.type).toEqual(QuestionTypes.Genre);
     expect(dispatch).toBeCalledWith({type: ActionsTypes.HandleAnswer, payload});
   });
+  it(`should handle incomplete user answer on GenreQuestion by handleAnswer`, () => {
+    const questionIndex = 1;
+    const state = {
+      ...initialState, questionIndex, questions: questions as GameQuestion[]
+    };
+    const question = questions[questionIndex] as GenreQuestion;
+    const answers = question.answers.filter((it) => it.genre === question.genre);
+    const mockAnswers = [answers[0]];
+    const dispatch = jest.fn();
+    const payload = {mistakes: 1};
+
+    handleAnswer(mockAnswers)(dispatch, () => state, null);
+
+    expect(answers.length).toBeGreaterThan(1);
+    expect(question.type).toEqual(QuestionTypes.Genre);
+    expect(dispatch).toBeCalledWith({type: ActionsTypes.HandleAnswer, payload});
+  });
   it(`should handle correct user answer on GenreQuestion by handleAnswer`, () => {
     const questionIndex = 1;
     const state = {

@@ -68,17 +68,25 @@ export const handleAnswer = (answers: GameAnswer[]): AppThunkAction => {
     const question = questions[questionIndex];
     const payload = {mistakes: 0};
 
+    let isAnswersCorrect = false;
+
     // TODO: Можно ли обойтись без явного приведения типов и необходима ли проверка,
     // что переданн answer подходящий для текущего типа вопроса?
-    const isAnswersCorrect = answers.every((it) => {
-      switch (question.type) {
-        case QuestionTypes.Artist:
-          return question.song.artist === (it as ArtistAnswer).artist;
-        case QuestionTypes.Genre:
-          return question.genre === (it as GenreAnswer).genre;
-      }
-      return false;
-    });
+    switch (question.type) {
+      case QuestionTypes.Artist:
+        const [answer] = answers as ArtistAnswer[];
+        isAnswersCorrect =
+          (answers.length === 1) &&
+          (question.song.artist === answer.artist);
+        break;
+      case QuestionTypes.Genre:
+        const genreAnswers = question.answers
+          .filter((it) => it.genre === question.genre);
+        isAnswersCorrect = (answers as GenreAnswer[])
+          .every((it) => question.genre === it.genre) &&
+          (answers.length === genreAnswers.length);
+        break;
+    }
 
     payload.mistakes = +!isAnswersCorrect;
 
