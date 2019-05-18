@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorModal correctly renders default markup 1`] = `
+<section
+  className="modal"
+>
+  <h2
+    className="modal__title"
+  >
+    Произошла ошибка!
+  </h2>
+  <p
+    className="modal__text"
+  >
+    Статус: 404. Пожалуйста, перезагрузите страницу.
+  </p>
+</section>
+`;
