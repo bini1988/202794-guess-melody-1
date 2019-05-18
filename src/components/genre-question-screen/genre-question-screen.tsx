@@ -1,14 +1,12 @@
 import React, {PureComponent} from "react";
-import {GenreQuestion} from "../../types.d";
+import {GenreQuestion, GameAnswer} from "../../types.d";
 import AudioPlayer from "../audio-player/audio-player";
 
 export interface GenreQuestionScreenProps {
-  /** Порядковый индекс */
-  index: number;
   /** Объект вопроса */
   question: GenreQuestion;
   /** Обработчик выбора вариантов ответов */
-  onAnswer?: (result: { index: number; answer: string[] }) => void;
+  onAnswer?: (answer: GameAnswer[]) => void;
 }
 export interface GenreQuestionScreenState {
   answers: { [key: string]: boolean };
@@ -78,13 +76,12 @@ class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQ
     event.preventDefault();
 
     const {answers} = this.state;
-    const {index, question, onAnswer} = this.props;
+    const {question, onAnswer} = this.props;
     const answer = question.answers
-      .filter((it, itIndex) => answers[`answer-${itIndex}`])
-      .map((it) => it.genre);
+      .filter((it, itIndex) => answers[`answer-${itIndex}`]);
 
     if (onAnswer) {
-      onAnswer({index, answer});
+      onAnswer(answer);
     }
   }
 
