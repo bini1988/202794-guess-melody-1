@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuccessScreen correctly renders default markup 1`] = `
+<section
+  className="result"
+>
+  <div
+    className="result__logo"
+  >
+    <img
+      alt="Угадай мелодию"
+      height="83"
+      src="img/melody-logo.png"
+      width="186"
+    />
+  </div>
+  <h2
+    className="result__title"
+  >
+    Вы настоящий меломан!
+  </h2>
+  <p
+    className="result__total"
+  >
+    За 3 минуты и 25 секунд вы набрали 12 баллов (8 быстрых), совершив 3 ошибки
+  </p>
+  <p
+    className="result__text"
+  >
+    Вы заняли 2 место из 10. Это лучше чем у 80% игроков
+  </p>
+  <button
+    className="replay"
+    onClick={[Function]}
+    type="button"
+  >
+    Сыграть ещё раз
+  </button>
+</section>
+`;
