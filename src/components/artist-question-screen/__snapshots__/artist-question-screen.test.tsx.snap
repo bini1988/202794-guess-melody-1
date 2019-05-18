@@ -43,7 +43,6 @@ exports[`ArtistQuestionScreen correctly renders default markup 1`] = `
   </div>
   <form
     className="game__artist"
-    onChange={[Function]}
   >
     <div
       className="artist"
@@ -52,6 +51,7 @@ exports[`ArtistQuestionScreen correctly renders default markup 1`] = `
         className="artist__input visually-hidden"
         id="artist-0"
         name="answer"
+        onChange={[Function]}
         type="radio"
         value="artist#1"
       />
@@ -74,6 +74,7 @@ exports[`ArtistQuestionScreen correctly renders default markup 1`] = `
         className="artist__input visually-hidden"
         id="artist-1"
         name="answer"
+        onChange={[Function]}
         type="radio"
         value="artist#2"
       />
@@ -96,6 +97,7 @@ exports[`ArtistQuestionScreen correctly renders default markup 1`] = `
         className="artist__input visually-hidden"
         id="artist-2"
         name="answer"
+        onChange={[Function]}
         type="radio"
         value="artist#3"
       />

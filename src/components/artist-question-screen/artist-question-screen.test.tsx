@@ -17,7 +17,6 @@ it(`ArtistQuestionScreen correctly renders default markup`, () => {
   const tree = renderer
     .create(
         <ArtistQuestionScreen
-          index={0}
           question={questionMock}/>
     ).toJSON();
 

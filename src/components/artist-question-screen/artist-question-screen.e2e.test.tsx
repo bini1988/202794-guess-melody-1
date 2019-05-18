@@ -8,7 +8,6 @@ configure({adapter: new Adapter()});
 
 describe(`ArtistQuestionScreen`, () => {
   it(`should call onAnswer with user answer`, () => {
-    const index = 10;
     const answerIndex = 1;
     const questionMock: GameQuestion = {
       type: QuestionTypes.Artist,
@@ -19,11 +18,10 @@ describe(`ArtistQuestionScreen`, () => {
         {picture: ``, artist: `artist#3`},
       ]
     };
-    const answer = questionMock.answers[answerIndex].artist;
+    const answer = questionMock.answers[answerIndex];
     const hanleAnswer = jest.fn();
     const wrapper = mount(
         <ArtistQuestionScreen
-          index={index}
           question={questionMock}
           onAnswer={hanleAnswer}/>
     );
@@ -34,9 +32,9 @@ describe(`ArtistQuestionScreen`, () => {
     const gameAnswer = gameForm.find(`#artist-${answerIndex}`);
     expect(gameAnswer).toHaveLength(1);
 
-    gameForm.simulate(`change`, {target: gameAnswer.getDOMNode()});
+    gameAnswer.simulate(`change`);
 
     expect(hanleAnswer).toHaveBeenCalledTimes(1);
-    expect(hanleAnswer).toHaveBeenCalledWith({index, answer});
+    expect(hanleAnswer).toHaveBeenCalledWith([answer]);
   });
 });
