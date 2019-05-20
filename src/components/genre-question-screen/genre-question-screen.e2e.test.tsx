@@ -43,4 +43,45 @@ describe(`GenreQuestionScreen`, () => {
       index, answer: questionMock.answers.map((it) => it.genre)
     });
   });
+  it(`should switch active player index`, () => {
+    HTMLMediaElement.prototype.play = jest.fn();
+    HTMLMediaElement.prototype.pause = jest.fn();
+
+    const index = 10;
+    const questionMock: GameQuestion = {
+      type: QuestionTypes.Genre,
+      genre: TrackGenres.Rock,
+      answers: [
+        {src: `src#1`, genre: TrackGenres.Rock},
+        {src: `src#2`, genre: TrackGenres.Jazz}
+      ]
+    };
+    const hanleAnswer = jest.fn();
+    const wrapper = mount(
+        <GenreQuestionScreen
+          index={index}
+          question={questionMock}
+          onAnswer={hanleAnswer}/>
+    );
+
+    let audioWrapper = null;
+
+    for (let audioIndex = 0; audioIndex < questionMock.answers.length; audioIndex++) {
+      audioWrapper = wrapper.find(`AudioPlayer`).at(audioIndex);
+      const audioWrapperProps = audioWrapper.props();
+
+      expect(audioWrapperProps).toHaveProperty(`onPlay`);
+      expect(audioWrapperProps).toHaveProperty(`onPause`);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (audioWrapper as any).prop(`onPlay`)();
+
+      expect(wrapper.state(`activePlayerIndex`)).toEqual(audioIndex);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (audioWrapper as any).prop(`onPause`)();
+
+    expect(wrapper.state(`activePlayerIndex`)).toEqual(-1);
+  });
 });
