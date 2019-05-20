@@ -24,6 +24,17 @@ export interface AudioPlayerState {
 class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
   private _audioRef: RefObject<HTMLAudioElement> ;
 
+  private static _isControlled(props: AudioPlayerProps): boolean {
+    return typeof props.isPlaying !== `undefined`;
+  }
+
+  public static getDerivedStateFromProps(nextProps: AudioPlayerProps) {
+    if (AudioPlayer._isControlled(nextProps)) {
+      return {isPlaying: nextProps.isPlaying};
+    }
+    return null;
+  }
+
   public constructor(props: AudioPlayerProps) {
     super(props);
 
@@ -33,7 +44,7 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
       isPlaying: false,
       progress: 0,
     };
-    this._audioRef = React.createRef();
+    this._audioRef = React.createRef<HTMLAudioElement>();
 
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
@@ -47,15 +58,16 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
   }
 
   public render() {
-    const {progress} = this.state;
+    const {isError, isLoading, isPlaying, progress} = this.state;
     const {src} = this.props;
-    const playClass = !this.isPlaying ? `track__button--play` : ``;
+    const playClass = !isPlaying ? `track__button--play` : ``;
 
     return (
       <div className="game__track">
         <button
           className={`track__button ${playClass}`}
           type="button"
+          disabled={isError || isLoading}
           onClick={this._handlePlayBtn}/>
         <div className="track__status">
           <audio
@@ -80,11 +92,8 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
   }
 
   public componentDidUpdate(prevProps: AudioPlayerProps, prevState: AudioPlayerState) {
-    if (
-      this.props.isPlaying !== prevProps.isPlaying ||
-      this.state.isPlaying !== prevState.isPlaying
-    ) {
-      if (this.isPlaying) {
+    if (this.state.isPlaying !== prevState.isPlaying) {
+      if (this.state.isPlaying) {
         this.play();
       } else {
         this.pause();
@@ -104,14 +113,8 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
     }
   }
 
-  public get isPlaying(): boolean {
-    return this._isControlled()
-      ? Boolean(this.props.isPlaying)
-      : this.state.isPlaying;
-  }
-
-  public set isPlaying(value: boolean) {
-    if (this._isControlled()) {
+  private _setIsPlaying(value: boolean) {
+    if (AudioPlayer._isControlled(this.props)) {
       if (value && this.props.onPlay) {
         this.props.onPlay.call(this, this);
       }
@@ -123,12 +126,8 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
     }
   }
 
-  private _isControlled(): boolean {
-    return typeof this.props.isPlaying !== `undefined`;
-  }
-
   private _handlePlayBtn() {
-    this.isPlaying = !this.isPlaying;
+    this._setIsPlaying(!this.state.isPlaying);
   }
 
   private _handleCanPlayThrough() {
@@ -136,7 +135,7 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
   }
 
   private _handleEnded() {
-    this.isPlaying = false;
+    this._setIsPlaying(false);
   }
 
   private _handleLoadStart() {
