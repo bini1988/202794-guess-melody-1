@@ -84,6 +84,7 @@ exports[`App correctly renders default markup 1`] = `
         >
           <button
             className="track__button track__button--play"
+            disabled={false}
             onClick={[Function]}
             type="button"
           />
@@ -139,6 +140,7 @@ exports[`App correctly renders default markup 1`] = `
         >
           <button
             className="track__button track__button--play"
+            disabled={false}
             onClick={[Function]}
             type="button"
           />
