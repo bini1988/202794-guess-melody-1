@@ -2,52 +2,199 @@
 
 exports[`App correctly renders default markup 1`] = `
 <section
-  className="welcome"
+  className="game game--genre"
 >
-  <div
-    className="welcome__logo"
+  <header
+    className="game__header"
   >
-    <img
-      alt="Угадай мелодию"
-      height="83"
-      src="img/melody-logo.png"
-      width="186"
-    />
-  </div>
-  <button
-    className="welcome__button"
-    onClick={[Function]}
-  >
-    <span
-      className="visually-hidden"
+    <a
+      className="game__back"
+      href="#"
     >
-      Начать игру
-    </span>
-  </button>
-  <h2
-    className="welcome__rules-title"
+      <span
+        className="visually-hidden"
+      >
+        Сыграть ещё раз
+      </span>
+      <img
+        alt="Угадай мелодию"
+        className="game__logo"
+        src="img/melody-logo-ginger.png"
+      />
+    </a>
+    <svg
+      className="timer"
+      viewBox="0 0 780 780"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        className="timer__line"
+        cx="390"
+        cy="390"
+        r="370"
+        style={
+          Object {
+            "filter": "url(#blur)",
+            "transform": "rotate(-90deg) scaleY(-1)",
+            "transformOrigin": "center",
+          }
+        }
+      />
+    </svg>
+    <div
+      className="timer__value"
+    >
+      <span
+        className="timer__mins"
+      >
+        03
+      </span>
+      <span
+        className="timer__dots"
+      >
+        :
+      </span>
+      <span
+        className="timer__secs"
+      >
+        30
+      </span>
+    </div>
+    <div
+      className="game__mistakes"
+    />
+  </header>
+  <section
+    className="game__screen"
   >
-    Правила игры
-  </h2>
-  <p
-    className="welcome__text"
-  >
-    Правила просты:
-  </p>
-  <ul
-    className="welcome__rules-list"
-  >
-    <li>
-      За 5 минут нужно ответить на все вопросы.
-    </li>
-    <li>
-      Можно допустить 3 ошибки.
-    </li>
-  </ul>
-  <p
-    className="welcome__text"
-  >
-    Удачи!
-  </p>
+    <h2
+      className="game__title"
+    >
+      Выберите rock треки
+    </h2>
+    <form
+      className="game__tracks"
+      onSubmit={[Function]}
+    >
+      <div
+        className="track"
+      >
+        <div
+          className="game__track"
+        >
+          <button
+            className="track__button track__button--play"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              onCanPlayThrough={[Function]}
+              onEnded={[Function]}
+              onError={[Function]}
+              onLoadStart={[Function]}
+              onTimeUpdate={[Function]}
+              src="src#1"
+            />
+            <div
+              className="track__progress"
+              style={
+                Object {
+                  "background": "#707070",
+                  "height": "2px",
+                  "marginTop": "55px",
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="game__answer"
+        >
+          <input
+            checked={false}
+            className="game__input visually-hidden"
+            id="answer-0"
+            name="answer"
+            onChange={[Function]}
+            type="checkbox"
+            value="rock"
+          />
+          <label
+            className="game__check"
+            htmlFor="answer-0"
+          >
+            Отметить
+          </label>
+        </div>
+      </div>
+      <div
+        className="track"
+      >
+        <div
+          className="game__track"
+        >
+          <button
+            className="track__button track__button--play"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              onCanPlayThrough={[Function]}
+              onEnded={[Function]}
+              onError={[Function]}
+              onLoadStart={[Function]}
+              onTimeUpdate={[Function]}
+              src="src#2"
+            />
+            <div
+              className="track__progress"
+              style={
+                Object {
+                  "background": "#707070",
+                  "height": "2px",
+                  "marginTop": "55px",
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="game__answer"
+        >
+          <input
+            checked={false}
+            className="game__input visually-hidden"
+            id="answer-1"
+            name="answer"
+            onChange={[Function]}
+            type="checkbox"
+            value="jazz"
+          />
+          <label
+            className="game__check"
+            htmlFor="answer-1"
+          >
+            Отметить
+          </label>
+        </div>
+      </div>
+      <button
+        className="game__submit button"
+        type="submit"
+      >
+        Ответить
+      </button>
+    </form>
+  </section>
 </section>
 `;

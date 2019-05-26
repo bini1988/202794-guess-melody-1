@@ -16,7 +16,6 @@ it(`GenreQuestionScreen correctly renders default markup`, () => {
   const tree = renderer
     .create(
         <GenreQuestionScreen
-          index={0}
           question={questionMock}/>
     ).toJSON();
 

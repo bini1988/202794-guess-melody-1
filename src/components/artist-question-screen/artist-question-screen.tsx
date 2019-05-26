@@ -1,14 +1,12 @@
 import React from "react";
-import {ArtistQuestion} from "../../types.d";
+import {ArtistQuestion, GameAnswer} from "../../types.d";
 import AudioPlayer from "../audio-player/audio-player";
 
 export interface ArtistQuestionScreenProps {
-  /** Порядковый индекс */
-  index: number;
   /** Объект вопроса */
   question: ArtistQuestion;
   /** Обработчик выбора варианта ответов */
-  onAnswer?: (result: { index: number; answer: string }) => void;
+  onAnswer?: (answer: GameAnswer[]) => void;
 }
 
 const ArtistQuestionScreen = (props: ArtistQuestionScreenProps): JSX.Element => {
@@ -22,30 +20,24 @@ const ArtistQuestionScreen = (props: ArtistQuestionScreenProps): JSX.Element => 
       </h2>
       <AudioPlayer
         src={song.src}/>
-      <form
-        className="game__artist"
-        onChange={(event) => {
-          const answerElement = event.target as HTMLInputElement;
-          const answer = answerElement.value;
-          const {index} = props;
-          onAnswer({index, answer});
-        }}>
-        {answers.map(({artist, picture}, index: number) => (
+      <form className="game__artist">
+        {answers.map((answer, index: number) => (
           <div className="artist" key={`artist-${index}`}>
             <input
               className="artist__input visually-hidden"
               type="radio"
               name="answer"
               id={`artist-${index}`}
-              value={artist}/>
+              value={answer.artist}
+              onChange={() => onAnswer([answer])}/>
             <label
               className="artist__name"
               htmlFor={`artist-${index}`}>
               <img
                 className="artist__picture"
-                src={picture}
-                alt={artist}/>
-              {artist}
+                src={answer.picture}
+                alt={answer.artist}/>
+              {answer.artist}
             </label>
           </div>
         ))}

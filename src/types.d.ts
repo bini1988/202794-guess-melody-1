@@ -11,6 +11,16 @@ export interface PublicSettings {
 }
 
 /**
+ * Типы прогрышных ситуаций
+ */
+export enum GameFailTypes {
+  /** Время вышло */
+  Time = "time",
+  /** Закончились попытки */
+  Tries = "tries",
+}
+
+/**
  * Типы используемых в игре вопросов
  */
 export enum QuestionTypes {
@@ -89,3 +99,8 @@ export interface ArtistQuestion {
  * Внутриигровой вопрос
  */
 export type GameQuestion = (GenreQuestion|ArtistQuestion);
+
+/**
+ * Внутриигровой ответ
+ */
+export type GameAnswer = (GenreAnswer|ArtistAnswer);

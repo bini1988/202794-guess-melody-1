@@ -8,7 +8,6 @@ configure({adapter: new Adapter()});
 
 describe(`GenreQuestionScreen`, () => {
   it(`should call onAnswer with user answer`, () => {
-    const index = 10;
     const questionMock: GameQuestion = {
       type: QuestionTypes.Genre,
       genre: TrackGenres.Rock,
@@ -21,7 +20,6 @@ describe(`GenreQuestionScreen`, () => {
     const hanleAnswer = jest.fn();
     const wrapper = mount(
         <GenreQuestionScreen
-          index={index}
           question={questionMock}
           onAnswer={hanleAnswer}/>
     );
@@ -39,15 +37,12 @@ describe(`GenreQuestionScreen`, () => {
     gameForm.simulate(`submit`, {preventDefault});
 
     expect(preventDefault).toHaveBeenCalledTimes(1);
-    expect(hanleAnswer).toHaveBeenCalledWith({
-      index, answer: questionMock.answers.map((it) => it.genre)
-    });
+    expect(hanleAnswer).toHaveBeenCalledWith(questionMock.answers);
   });
   it(`should switch active player index`, () => {
     HTMLMediaElement.prototype.play = jest.fn();
     HTMLMediaElement.prototype.pause = jest.fn();
 
-    const index = 10;
     const questionMock: GameQuestion = {
       type: QuestionTypes.Genre,
       genre: TrackGenres.Rock,
@@ -59,7 +54,6 @@ describe(`GenreQuestionScreen`, () => {
     const hanleAnswer = jest.fn();
     const wrapper = mount(
         <GenreQuestionScreen
-          index={index}
           question={questionMock}
           onAnswer={hanleAnswer}/>
     );

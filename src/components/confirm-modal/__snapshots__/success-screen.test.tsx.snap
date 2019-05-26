@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmModal correctly renders default markup 1`] = `
+<section
+  className="modal"
+>
+  <button
+    className="modal__close"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="visually-hidden"
+    >
+      Закрыть
+    </span>
+  </button>
+  <h2
+    className="modal__title"
+  >
+    Подтверждение
+  </h2>
+  <p
+    className="modal__text"
+  >
+    Вы уверены что хотите начать игру заново?
+  </p>
+  <div
+    className="modal__buttons"
+  >
+    <button
+      className="modal__button button"
+      onClick={[Function]}
+    >
+      Ок
+    </button>
+    <button
+      className="modal__button button"
+      onClick={[Function]}
+    >
+      Отмена
+    </button>
+  </div>
+</section>
+`;
