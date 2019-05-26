@@ -6,34 +6,6 @@ import AudioPlayer from "./audio-player";
 configure({adapter: new Adapter()});
 
 describe(`AudioPlayer`, () => {
-  it(`should call onPlay on controlled mode`, () => {
-    const hanlePlay = jest.fn();
-    const wrapper = mount(
-        <AudioPlayer
-          src=""
-          isPlaying={false}
-          onPlay={hanlePlay}/>
-    );
-
-    const button = wrapper.find(`.track__button`);
-    button.simulate(`click`);
-
-    expect(hanlePlay).toBeCalledWith(wrapper.instance());
-  });
-  it(`should call onPause on controlled mode`, () => {
-    const hanlePause = jest.fn();
-    const wrapper = mount(
-        <AudioPlayer
-          src=""
-          isPlaying={true}
-          onPause={hanlePause}/>
-    );
-
-    const button = wrapper.find(`.track__button`);
-    button.simulate(`click`);
-
-    expect(hanlePause).toBeCalledWith(wrapper.instance());
-  });
   it(`should call onPlay and onPause on controlled mode`, () => {
     HTMLMediaElement.prototype.play = jest.fn();
     HTMLMediaElement.prototype.pause = jest.fn();
@@ -76,6 +48,12 @@ describe(`AudioPlayer`, () => {
     expect(hanlePause).toBeCalledTimes(1);
   });
   it(`should change isPlaying state on uncontrolled mode`, () => {
+    const hanlePlay = jest.fn();
+    const hanlePause = jest.fn();
+
+    HTMLMediaElement.prototype.play = hanlePlay;
+    HTMLMediaElement.prototype.pause = hanlePause;
+
     const wrapper = mount(
         <AudioPlayer src=""/>
     );
@@ -84,9 +62,11 @@ describe(`AudioPlayer`, () => {
     button.simulate(`click`);
 
     expect(wrapper.state(`isPlaying`)).toEqual(true);
+    expect(hanlePlay).toBeCalled();
 
     button.simulate(`click`);
 
     expect(wrapper.state(`isPlaying`)).toEqual(false);
+    expect(hanlePause).toBeCalled();
   });
 });
