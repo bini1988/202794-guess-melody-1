@@ -14,14 +14,33 @@ exports[`ArtistQuestionScreen correctly renders default markup 1`] = `
   >
     <button
       className="track__button track__button--play"
+      disabled={false}
+      onClick={[Function]}
       type="button"
     />
-    <audio>
-      <source
+    <div
+      className="track__status"
+    >
+      <audio
+        onCanPlayThrough={[Function]}
+        onEnded={[Function]}
+        onError={[Function]}
+        onLoadStart={[Function]}
+        onTimeUpdate={[Function]}
         src=""
-        type="audio/ogg; codecs=vorbis"
       />
-    </audio>
+      <div
+        className="track__progress"
+        style={
+          Object {
+            "background": "#707070",
+            "height": "2px",
+            "marginTop": "55px",
+            "width": "0%",
+          }
+        }
+      />
+    </div>
   </div>
   <form
     className="game__artist"

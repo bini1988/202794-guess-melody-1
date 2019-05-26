@@ -24,7 +24,7 @@ export const questions = [
     type: `artist`,
     song: {
       artist: `Jim Beam`,
-      src: `https://upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/d/db/Gimn_Sovetskogo_Soyuza_%281977_Vocal%29.oga`,
     },
     answers: [
       {

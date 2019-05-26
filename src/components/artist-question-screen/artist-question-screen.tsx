@@ -1,5 +1,6 @@
 import React from "react";
 import {ArtistQuestion} from "../../types.d";
+import AudioPlayer from "../audio-player/audio-player";
 
 export interface ArtistQuestionScreenProps {
   /** Порядковый индекс */
@@ -19,12 +20,8 @@ const ArtistQuestionScreen = (props: ArtistQuestionScreenProps): JSX.Element => 
       <h2 className="game__title">
         {`Кто исполняет эту песню?`}
       </h2>
-      <div className="game__track">
-        <button className="track__button track__button--play" type="button"/>
-        <audio>
-          <source src={song.src} type="audio/ogg; codecs=vorbis"/>
-        </audio>
-      </div>
+      <AudioPlayer
+        src={song.src}/>
       <form
         className="game__artist"
         onChange={(event) => {

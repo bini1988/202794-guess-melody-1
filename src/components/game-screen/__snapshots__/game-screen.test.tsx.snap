@@ -89,19 +89,38 @@ exports[`GameScreen correctly renders default markup 1`] = `
       <div
         className="track"
       >
-        <button
-          className="track__button track__button--play"
-          type="button"
-        />
         <div
-          className="track__status"
+          className="game__track"
         >
-          <audio>
-            <source
+          <button
+            className="track__button track__button--play"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              onCanPlayThrough={[Function]}
+              onEnded={[Function]}
+              onError={[Function]}
+              onLoadStart={[Function]}
+              onTimeUpdate={[Function]}
               src="src#1"
-              type="audio/ogg; codecs=vorbis"
             />
-          </audio>
+            <div
+              className="track__progress"
+              style={
+                Object {
+                  "background": "#707070",
+                  "height": "2px",
+                  "marginTop": "55px",
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="game__answer"
@@ -126,19 +145,38 @@ exports[`GameScreen correctly renders default markup 1`] = `
       <div
         className="track"
       >
-        <button
-          className="track__button track__button--play"
-          type="button"
-        />
         <div
-          className="track__status"
+          className="game__track"
         >
-          <audio>
-            <source
+          <button
+            className="track__button track__button--play"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              onCanPlayThrough={[Function]}
+              onEnded={[Function]}
+              onError={[Function]}
+              onLoadStart={[Function]}
+              onTimeUpdate={[Function]}
               src="src#2"
-              type="audio/ogg; codecs=vorbis"
             />
-          </audio>
+            <div
+              className="track__progress"
+              style={
+                Object {
+                  "background": "#707070",
+                  "height": "2px",
+                  "marginTop": "55px",
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
         </div>
         <div
           className="game__answer"
