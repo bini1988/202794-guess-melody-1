@@ -43,7 +43,6 @@ describe(`GenreQuestionScreen`, () => {
     HTMLMediaElement.prototype.play = jest.fn();
     HTMLMediaElement.prototype.pause = jest.fn();
 
-    const index = 10;
     const questionMock: GameQuestion = {
       type: QuestionTypes.Genre,
       genre: TrackGenres.Rock,
@@ -55,7 +54,6 @@ describe(`GenreQuestionScreen`, () => {
     const hanleAnswer = jest.fn();
     const wrapper = mount(
         <GenreQuestionScreen
-          index={index}
           question={questionMock}
           onAnswer={hanleAnswer}/>
     );
