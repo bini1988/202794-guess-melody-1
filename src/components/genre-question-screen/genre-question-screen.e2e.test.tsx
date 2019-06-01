@@ -2,7 +2,7 @@ import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import {QuestionTypes, TrackGenres, GameQuestion} from "../../types.d";
-import GenreQuestionScreen from "./genre-question-screen";
+import {GenreQuestionScreen} from "./genre-question-screen";
 
 configure({adapter: new Adapter()});
 
@@ -39,43 +39,25 @@ describe(`GenreQuestionScreen`, () => {
     expect(preventDefault).toHaveBeenCalledTimes(1);
     expect(hanleAnswer).toHaveBeenCalledWith(questionMock.answers);
   });
-  it(`should switch active player index`, () => {
+  it(`should call renderPlayer method`, () => {
     HTMLMediaElement.prototype.play = jest.fn();
     HTMLMediaElement.prototype.pause = jest.fn();
 
+    const src = `src#1`;
     const questionMock: GameQuestion = {
       type: QuestionTypes.Genre,
       genre: TrackGenres.Rock,
       answers: [
-        {src: `src#1`, genre: TrackGenres.Rock},
-        {src: `src#2`, genre: TrackGenres.Jazz}
+        {src, genre: TrackGenres.Rock},
       ]
     };
-    const hanleAnswer = jest.fn();
-    const wrapper = mount(
+    const renderPlayer = jest.fn();
+    mount(
         <GenreQuestionScreen
           question={questionMock}
-          onAnswer={hanleAnswer}/>
+          renderPlayer={renderPlayer}/>
     );
 
-    let audioWrapper = null;
-
-    for (let audioIndex = 0; audioIndex < questionMock.answers.length; audioIndex++) {
-      audioWrapper = wrapper.find(`AudioPlayer`).at(audioIndex);
-      const audioWrapperProps = audioWrapper.props();
-
-      expect(audioWrapperProps).toHaveProperty(`onPlay`);
-      expect(audioWrapperProps).toHaveProperty(`onPause`);
-
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (audioWrapper as any).prop(`onPlay`)();
-
-      expect(wrapper.state(`activePlayerIndex`)).toEqual(audioIndex);
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (audioWrapper as any).prop(`onPause`)();
-
-    expect(wrapper.state(`activePlayerIndex`)).toEqual(-1);
+    expect(renderPlayer).toBeCalledWith(0, {src});
   });
 });

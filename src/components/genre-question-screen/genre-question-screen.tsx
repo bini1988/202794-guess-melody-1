@@ -1,16 +1,18 @@
 import React, {PureComponent} from "react";
 import {GenreQuestion, GameAnswer} from "../../types.d";
-import AudioPlayer from "../audio-player/audio-player";
+import {AudioPlayerProps} from "../../components/audio-player/audio-player";
+import withActivePlayer from "../../hocs/with-active-player/with-active-player";
 
 export interface GenreQuestionScreenProps {
   /** Объект вопроса */
   question: GenreQuestion;
   /** Обработчик выбора вариантов ответов */
   onAnswer?: (answer: GameAnswer[]) => void;
+  /** Рендер функция плеера */
+  renderPlayer?: (index: number, props: AudioPlayerProps) => JSX.Element;
 }
 export interface GenreQuestionScreenState {
   answers: { [key: string]: boolean };
-  activePlayerIndex: number;
 }
 
 class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQuestionScreenState> {
@@ -19,18 +21,15 @@ class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQ
 
     this.state = {
       answers: {},
-      activePlayerIndex: -1,
     };
 
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleAnswerWith = this._handleAnswerWith.bind(this);
-    this._handlePlayerPlayWith = this._handlePlayerPlayWith.bind(this);
-    this._handlePlayerPause = this._handlePlayerPause.bind(this);
   }
 
   public render() {
-    const {answers, activePlayerIndex} = this.state;
-    const {question} = this.props;
+    const {answers} = this.state;
+    const {question, renderPlayer} = this.props;
 
     return (
       <section className="game__screen">
@@ -42,11 +41,7 @@ class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQ
           onSubmit={this._handleSubmit}>
           {question.answers.map((it, index: number) => (
             <div className="track" key={`answer-${index}`}>
-              <AudioPlayer
-                src={it.src}
-                isPlaying={activePlayerIndex === index}
-                onPlay={this._handlePlayerPlayWith(index)}
-                onPause={this._handlePlayerPause}/>
+              {renderPlayer && renderPlayer(index, {src: it.src})}
               <div className="game__answer">
                 <input
                   className="game__input visually-hidden"
@@ -92,16 +87,7 @@ class GenreQuestionScreen extends PureComponent<GenreQuestionScreenProps, GenreQ
       }));
     };
   }
-
-  private _handlePlayerPlayWith(index: number) {
-    return () => {
-      this.setState({activePlayerIndex: index});
-    };
-  }
-
-  private _handlePlayerPause() {
-    this.setState({activePlayerIndex: -1});
-  }
 }
 
-export default GenreQuestionScreen;
+export {GenreQuestionScreen};
+export default withActivePlayer(GenreQuestionScreen);
