@@ -36,3 +36,35 @@ it(`App correctly renders default markup`, () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it(`App correctly renders genre question markup`, () => {
+  const tree = renderer
+    .create(
+        <App
+          maxTime={5}
+          maxMistakes={3}
+          mistakes={0}
+          questions={questionsMock}
+          questionIndex={1}
+          handleStep={() => {}}
+          handleAnswer={() => {}}/>
+    ).toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it(`App correctly renders artist question markup`, () => {
+  const tree = renderer
+    .create(
+        <App
+          maxTime={5}
+          maxMistakes={3}
+          mistakes={0}
+          questions={questionsMock}
+          questionIndex={1}
+          handleStep={() => {}}
+          handleAnswer={() => {}}/>
+    ).toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
