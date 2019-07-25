@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameFooter correctly renders default markup 1`] = `
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.emotion-6 {
+  text-align: right;
+  color: #f0eed5;
+  white-space: nowrap;
+}
+
+.emotion-0:hover,
+.emotion-0:focus,
+.emotion-0:active {
+  opacity: 0.8;
+}
+
+.emotion-4 {
+  margin: 10px 0px 0px;
+}
+
+.emotion-2 {
+  color: #ff9749;
+  -webkit-transition: color ease-in-out 250ms;
+  transition: color ease-in-out 250ms;
+}
+
+.emotion-2:hover,
+.emotion-2:focus,
+.emotion-2:active {
+  color: #f00000;
+}
+
+<footer
+  className="emotion-8 emotion-9"
+>
+  <a
+    href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    rel="license"
+  >
+    <img
+      alt="Creative Commons License"
+      height="31"
+      src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"
+      width="88"
+    />
+  </a>
+  <section
+    className="emotion-6 emotion-7"
+  >
+    <a
+      className="emotion-0 emotion-1"
+      href="https://htmlacademy.ru"
+    >
+      <img
+        alt="HTML Academy"
+        height="49"
+        src="img/logo-htmla.svg"
+        width="144"
+      />
+    </a>
+    <p
+      className="emotion-4 emotion-5"
+    >
+      Сделано в 
+      <a
+        className="emotion-2 emotion-3"
+        href="https://htmlacademy.ru"
+      >
+        HTML Academy
+      </a>
+    </p>
+  </section>
+</footer>
+`;
