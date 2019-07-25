@@ -1,7 +1,7 @@
 import React from "react";
 import {configure, shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import WelcomeScreen from "./welcome-screen";
+import WelcomeScreen, {Button} from "./welcome-screen";
 
 configure({adapter: new Adapter()});
 
@@ -15,7 +15,7 @@ describe(`WelcomeScreen`, () => {
           onBeginClick={btnClickHandler}/>
     );
 
-    const btn = wrapper.find(`.welcome__button`);
+    const btn = wrapper.find(Button);
     expect(btn).toHaveLength(1);
 
     btn.simulate(`click`);
