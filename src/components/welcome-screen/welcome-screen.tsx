@@ -1,5 +1,5 @@
 import React, {MouseEvent} from "react";
-import * as Common from "../../common.styled";
+import * as Styles from "../../common.styles";
 import styled from "@emotion/styled";
 
 const WelcomeWrapper = styled.section`
@@ -82,7 +82,7 @@ function WelcomeScreen(props: WelcomeScreenProps): JSX.Element {
         <svg height="140" width="100" fill="#ff9749">
           <polygon points="0,0 100,70 0,140"/>
         </svg>
-        <span css={Common.hidden}>{`Начать игру`}</span>
+        <span css={Styles.hidden}>{`Начать игру`}</span>
       </Button>
       <Title>{`Правила игры`}</Title>
       <Text>{`Правила просты:`}</Text>
