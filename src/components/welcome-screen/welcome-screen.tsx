@@ -7,6 +7,7 @@ const WelcomeWrapper = styled.section`
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  position: relative;
   width: 100%;
   height: 100%;
 `;
