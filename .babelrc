@@ -1,6 +1,7 @@
 {
   "presets": [
     "@babel/preset-env",
+    "mobx",
     "@babel/preset-typescript",
     "@babel/preset-react",
     "@emotion/babel-preset-css-prop"
