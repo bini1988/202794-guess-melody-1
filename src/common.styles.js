@@ -1,4 +1,4 @@
-import {css} from "@emotion/core";
+import {css, keyframes} from "@emotion/core";
 
 export const fontFaces = css`
   @font-face {
@@ -83,4 +83,11 @@ export const hidden = css`
 export const container = css`
   max-width: 680px;
   margin: 0 auto;
+`;
+
+export const bounce = keyframes`
+  0% { transform: translateY(-2000px); }
+  70% { transform: translateY(30px); }
+  90% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 `;
