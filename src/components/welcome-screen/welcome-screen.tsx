@@ -8,20 +8,20 @@ const WelcomeWrapper = styled.section`
   flex-direction: column;
   flex-wrap: wrap;
   position: relative;
+  box-sizing: border-box;
+  padding: 190px 0px 130px;
   width: 100%;
   height: 100%;
 `;
 
 const Logo = styled.div`
-  margin: 0;
-  margin-top: 220px;
+  margin: 25px 0px;
 `;
 
 export const Button = styled.button`
-  position: absolute;
-  left: 350px;
-  top: 420px;
   padding: 0;
+  margin: 80px 0px 35px;
+  margin-left: 20px;
   width: 100px;
   height: 140px;
   background: transparent;
@@ -47,7 +47,7 @@ const Title = styled.h2`
   font-weight: 300;
   font-size: 33px;
   color: #230d1a;
-  margin-top: 300px;
+  margin-top: 20px;
 `;
 
 const Text = styled.p`

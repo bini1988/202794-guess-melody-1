@@ -40,6 +40,9 @@ export const fontFaces = css`
 `;
 
 export const body = css`
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
   html {
     position: relative;
     box-sizing: border-box;
@@ -52,13 +55,8 @@ export const body = css`
     font-weight: 300;
     font-size: 16px;
     color: #230d1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    min-height: 1000px;
-    background: url("../img/vinyl.png") center no-repeat;
+    margin: 0;
+    padding: 0;
   }
 `;
 
@@ -80,4 +78,9 @@ export const hidden = css`
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+`;
+
+export const container = css`
+  max-width: 680px;
+  margin: 0 auto;
 `;

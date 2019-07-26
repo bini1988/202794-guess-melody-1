@@ -1,14 +1,30 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Global} from "@emotion/core";
+import styled from "@emotion/styled";
 
 import * as Styles from "../../common.styles";
 
 import {GameAnswer} from "../../types.d";
 import {AppState, handleStep, handleAnswer} from "../../reducer";
 import GameScreen from "../game-screen/game-screen";
-import WelcomeScreen from "../welcome-screen/welcome-screen";
-import GameFooter from "../game-footer/game-footer";
+import WelcomeScreen from "../welcome-screen";
+import AppFooter from "../app-footer";
+
+const AppWrapper = styled.div`
+  position: relative;
+  box-sizing: border-box;
+  background: url("../img/vinyl.png") center no-repeat;
+`;
+
+const AppMain = styled.main`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
 
 export interface AppProps extends AppState {
   /** Переход к следующему шагу игры */
@@ -21,14 +37,14 @@ export function App(props: AppProps) {
   const {maxTime, maxMistakes, mistakes, questions, questionIndex} = props;
 
   return (
-    <React.Fragment>
+    <AppWrapper>
       <Global
         styles={[
           Styles.fontFaces,
           Styles.body,
           Styles.img,
         ]}/>
-      <main className="main">
+      <AppMain>
         {(questionIndex >= 0) ? (
           <GameScreen
             questions={questions}
@@ -42,9 +58,9 @@ export function App(props: AppProps) {
             maxMistakes={maxMistakes}
             onBeginClick={props.handleStep}/>
         )}
-      </main>
-      <GameFooter/>
-    </React.Fragment>
+      </AppMain>
+      <AppFooter/>
+    </AppWrapper>
   );
 }
 
