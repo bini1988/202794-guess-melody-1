@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App correctly renders artist question markup 1`] = `
-.emotion-12 {
+.emotion-27 {
   position: relative;
   box-sizing: border-box;
   background: url("../img/vinyl.png") center no-repeat;
 }
 
-.emotion-0 {
+.emotion-15 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -29,7 +29,101 @@ exports[`App correctly renders artist question markup 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-10 {
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box;
+  padding: 190px 0px 130px;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  margin: 25px 0px;
+}
+
+.emotion-3 {
+  padding: 0;
+  margin: 80px 0px 35px;
+  margin-left: 20px;
+  width: 100px;
+  height: 140px;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-transition: -webkit-transform ease-in-out 300ms;
+  -webkit-transition: transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+  cursor: pointer;
+}
+
+.emotion-3:hover,
+.emotion-3:focus {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.emotion-3:active {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.emotion-3 > svg {
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+}
+
+.emotion-2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.emotion-5 {
+  margin: 0;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 33px;
+  color: #230d1a;
+  margin-top: 20px;
+}
+
+.emotion-7 {
+  margin: 10px 0px;
+}
+
+.emotion-9 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.emotion-25 {
   max-width: 680px;
   margin: 0 auto;
   display: -webkit-box;
@@ -43,199 +137,111 @@ exports[`App correctly renders artist question markup 1`] = `
   padding: 0px 20px;
 }
 
-.emotion-8 {
+.emotion-23 {
   text-align: right;
   color: #f0eed5;
   white-space: nowrap;
 }
 
-.emotion-2:hover,
-.emotion-2:focus,
-.emotion-2:active {
+.emotion-17:hover,
+.emotion-17:focus,
+.emotion-17:active {
   opacity: 0.8;
 }
 
-.emotion-6 {
+.emotion-21 {
   margin: 10px 0px 0px;
 }
 
-.emotion-4 {
+.emotion-19 {
   color: #ff9749;
   -webkit-transition: color ease-in-out 250ms;
   transition: color ease-in-out 250ms;
 }
 
-.emotion-4:hover,
-.emotion-4:focus,
-.emotion-4:active {
+.emotion-19:hover,
+.emotion-19:focus,
+.emotion-19:active {
   color: #f00000;
 }
 
 <div
-  className="emotion-12 emotion-13"
+  className="emotion-27 emotion-28"
 >
   <main
-    className="emotion-0 emotion-1"
+    className="emotion-15 emotion-16"
   >
-    <section
-      className="game game--artist"
+    <div
+      role="group"
+      style={
+        Object {
+          "outline": "none",
+        }
+      }
+      tabIndex="-1"
     >
-      <header
-        className="game__header"
+      <section
+        className="emotion-13 emotion-14"
       >
-        <a
-          className="game__back"
-          href="#"
+        <div
+          className="emotion-0 emotion-1"
         >
-          <span
-            className="visually-hidden"
-          >
-            Сыграть ещё раз
-          </span>
           <img
             alt="Угадай мелодию"
-            className="game__logo"
-            src="img/melody-logo-ginger.png"
+            height="83"
+            src="img/melody-logo.png"
+            width="186"
           />
-        </a>
-        <svg
-          className="timer"
-          viewBox="0 0 780 780"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            className="timer__line"
-            cx="390"
-            cy="390"
-            r="370"
-            style={
-              Object {
-                "filter": "url(#blur)",
-                "transform": "rotate(-90deg) scaleY(-1)",
-                "transformOrigin": "center",
-              }
-            }
-          />
-        </svg>
-        <div
-          className="timer__value"
-        >
-          <span
-            className="timer__mins"
-          >
-            03
-          </span>
-          <span
-            className="timer__dots"
-          >
-            :
-          </span>
-          <span
-            className="timer__secs"
-          >
-            30
-          </span>
         </div>
-        <div
-          className="game__mistakes"
-        />
-      </header>
-      <section
-        className="game__screen"
-      >
+        <button
+          className="emotion-3 emotion-4"
+          onClick={[Function]}
+        >
+          <svg
+            fill="#ff9749"
+            height="140"
+            width="100"
+          >
+            <polygon
+              points="0,0 100,70 0,140"
+            />
+          </svg>
+          <span
+            className="emotion-2"
+          >
+            Начать игру
+          </span>
+        </button>
         <h2
-          className="game__title"
+          className="emotion-5 emotion-6"
         >
-          Кто исполняет эту песню?
+          Правила игры
         </h2>
-        <div
-          className="game__track"
+        <p
+          className="emotion-7 emotion-8"
         >
-          <button
-            className="track__button track__button--play"
-            disabled={false}
-            onClick={[Function]}
-            type="button"
-          />
-          <div
-            className="track__status"
-          >
-            <audio
-              onCanPlayThrough={[Function]}
-              onEnded={[Function]}
-              onError={[Function]}
-              onLoadStart={[Function]}
-              onTimeUpdate={[Function]}
-              src="src#1"
-            />
-            <div
-              className="track__progress"
-              style={
-                Object {
-                  "background": "#707070",
-                  "height": "2px",
-                  "marginTop": "55px",
-                  "width": "0%",
-                }
-              }
-            />
-          </div>
-        </div>
-        <form
-          className="game__artist"
+          Правила просты:
+        </p>
+        <ul
+          className="emotion-9 emotion-10"
         >
-          <div
-            className="artist"
-          >
-            <input
-              className="artist__input visually-hidden"
-              id="artist-0"
-              name="answer"
-              onChange={[Function]}
-              type="radio"
-              value="artist#1"
-            />
-            <label
-              className="artist__name"
-              htmlFor="artist-0"
-            >
-              <img
-                alt="artist#1"
-                className="artist__picture"
-                src="picture#1"
-              />
-              artist#1
-            </label>
-          </div>
-          <div
-            className="artist"
-          >
-            <input
-              className="artist__input visually-hidden"
-              id="artist-1"
-              name="answer"
-              onChange={[Function]}
-              type="radio"
-              value="artist#2"
-            />
-            <label
-              className="artist__name"
-              htmlFor="artist-1"
-            >
-              <img
-                alt="artist#2"
-                className="artist__picture"
-                src="picture#2"
-              />
-              artist#2
-            </label>
-          </div>
-        </form>
+          <li>
+            За 5 минут нужно ответить на все вопросы.
+          </li>
+          <li>
+            Можно допустить 3 ошибки.
+          </li>
+        </ul>
+        <p
+          className="emotion-7 emotion-8"
+        >
+          Удачи!
+        </p>
       </section>
-    </section>
+    </div>
   </main>
   <footer
-    className="emotion-10 emotion-11"
+    className="emotion-25 emotion-26"
   >
     <a
       href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
@@ -249,10 +255,10 @@ exports[`App correctly renders artist question markup 1`] = `
       />
     </a>
     <section
-      className="emotion-8 emotion-9"
+      className="emotion-23 emotion-24"
     >
       <a
-        className="emotion-2 emotion-3"
+        className="emotion-17 emotion-18"
         href="https://htmlacademy.ru"
       >
         <img
@@ -263,11 +269,11 @@ exports[`App correctly renders artist question markup 1`] = `
         />
       </a>
       <p
-        className="emotion-6 emotion-7"
+        className="emotion-21 emotion-22"
       >
         Сделано в 
         <a
-          className="emotion-4 emotion-5"
+          className="emotion-19 emotion-20"
           href="https://htmlacademy.ru"
         >
           HTML Academy
@@ -279,13 +285,13 @@ exports[`App correctly renders artist question markup 1`] = `
 `;
 
 exports[`App correctly renders default markup 1`] = `
-.emotion-12 {
+.emotion-27 {
   position: relative;
   box-sizing: border-box;
   background: url("../img/vinyl.png") center no-repeat;
 }
 
-.emotion-0 {
+.emotion-15 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -307,7 +313,101 @@ exports[`App correctly renders default markup 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-10 {
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box;
+  padding: 190px 0px 130px;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  margin: 25px 0px;
+}
+
+.emotion-3 {
+  padding: 0;
+  margin: 80px 0px 35px;
+  margin-left: 20px;
+  width: 100px;
+  height: 140px;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-transition: -webkit-transform ease-in-out 300ms;
+  -webkit-transition: transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+  cursor: pointer;
+}
+
+.emotion-3:hover,
+.emotion-3:focus {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.emotion-3:active {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.emotion-3 > svg {
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+}
+
+.emotion-2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.emotion-5 {
+  margin: 0;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 33px;
+  color: #230d1a;
+  margin-top: 20px;
+}
+
+.emotion-7 {
+  margin: 10px 0px;
+}
+
+.emotion-9 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.emotion-25 {
   max-width: 680px;
   margin: 0 auto;
   display: -webkit-box;
@@ -321,239 +421,111 @@ exports[`App correctly renders default markup 1`] = `
   padding: 0px 20px;
 }
 
-.emotion-8 {
+.emotion-23 {
   text-align: right;
   color: #f0eed5;
   white-space: nowrap;
 }
 
-.emotion-2:hover,
-.emotion-2:focus,
-.emotion-2:active {
+.emotion-17:hover,
+.emotion-17:focus,
+.emotion-17:active {
   opacity: 0.8;
 }
 
-.emotion-6 {
+.emotion-21 {
   margin: 10px 0px 0px;
 }
 
-.emotion-4 {
+.emotion-19 {
   color: #ff9749;
   -webkit-transition: color ease-in-out 250ms;
   transition: color ease-in-out 250ms;
 }
 
-.emotion-4:hover,
-.emotion-4:focus,
-.emotion-4:active {
+.emotion-19:hover,
+.emotion-19:focus,
+.emotion-19:active {
   color: #f00000;
 }
 
 <div
-  className="emotion-12 emotion-13"
+  className="emotion-27 emotion-28"
 >
   <main
-    className="emotion-0 emotion-1"
+    className="emotion-15 emotion-16"
   >
-    <section
-      className="game game--genre"
+    <div
+      role="group"
+      style={
+        Object {
+          "outline": "none",
+        }
+      }
+      tabIndex="-1"
     >
-      <header
-        className="game__header"
+      <section
+        className="emotion-13 emotion-14"
       >
-        <a
-          className="game__back"
-          href="#"
+        <div
+          className="emotion-0 emotion-1"
         >
-          <span
-            className="visually-hidden"
-          >
-            Сыграть ещё раз
-          </span>
           <img
             alt="Угадай мелодию"
-            className="game__logo"
-            src="img/melody-logo-ginger.png"
+            height="83"
+            src="img/melody-logo.png"
+            width="186"
           />
-        </a>
-        <svg
-          className="timer"
-          viewBox="0 0 780 780"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            className="timer__line"
-            cx="390"
-            cy="390"
-            r="370"
-            style={
-              Object {
-                "filter": "url(#blur)",
-                "transform": "rotate(-90deg) scaleY(-1)",
-                "transformOrigin": "center",
-              }
-            }
-          />
-        </svg>
-        <div
-          className="timer__value"
-        >
-          <span
-            className="timer__mins"
-          >
-            03
-          </span>
-          <span
-            className="timer__dots"
-          >
-            :
-          </span>
-          <span
-            className="timer__secs"
-          >
-            30
-          </span>
         </div>
-        <div
-          className="game__mistakes"
-        />
-      </header>
-      <section
-        className="game__screen"
-      >
+        <button
+          className="emotion-3 emotion-4"
+          onClick={[Function]}
+        >
+          <svg
+            fill="#ff9749"
+            height="140"
+            width="100"
+          >
+            <polygon
+              points="0,0 100,70 0,140"
+            />
+          </svg>
+          <span
+            className="emotion-2"
+          >
+            Начать игру
+          </span>
+        </button>
         <h2
-          className="game__title"
+          className="emotion-5 emotion-6"
         >
-          Выберите rock треки
+          Правила игры
         </h2>
-        <form
-          className="game__tracks"
-          onSubmit={[Function]}
+        <p
+          className="emotion-7 emotion-8"
         >
-          <div
-            className="track"
-          >
-            <div
-              className="game__track"
-            >
-              <button
-                className="track__button track__button--play"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              />
-              <div
-                className="track__status"
-              >
-                <audio
-                  onCanPlayThrough={[Function]}
-                  onEnded={[Function]}
-                  onError={[Function]}
-                  onLoadStart={[Function]}
-                  onTimeUpdate={[Function]}
-                  src="src#1"
-                />
-                <div
-                  className="track__progress"
-                  style={
-                    Object {
-                      "background": "#707070",
-                      "height": "2px",
-                      "marginTop": "55px",
-                      "width": "0%",
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <div
-              className="game__answer"
-            >
-              <input
-                checked={false}
-                className="game__input visually-hidden"
-                id="answer-0"
-                name="answer"
-                onChange={[Function]}
-                type="checkbox"
-                value="rock"
-              />
-              <label
-                className="game__check"
-                htmlFor="answer-0"
-              >
-                Отметить
-              </label>
-            </div>
-          </div>
-          <div
-            className="track"
-          >
-            <div
-              className="game__track"
-            >
-              <button
-                className="track__button track__button--play"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              />
-              <div
-                className="track__status"
-              >
-                <audio
-                  onCanPlayThrough={[Function]}
-                  onEnded={[Function]}
-                  onError={[Function]}
-                  onLoadStart={[Function]}
-                  onTimeUpdate={[Function]}
-                  src="src#2"
-                />
-                <div
-                  className="track__progress"
-                  style={
-                    Object {
-                      "background": "#707070",
-                      "height": "2px",
-                      "marginTop": "55px",
-                      "width": "0%",
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <div
-              className="game__answer"
-            >
-              <input
-                checked={false}
-                className="game__input visually-hidden"
-                id="answer-1"
-                name="answer"
-                onChange={[Function]}
-                type="checkbox"
-                value="jazz"
-              />
-              <label
-                className="game__check"
-                htmlFor="answer-1"
-              >
-                Отметить
-              </label>
-            </div>
-          </div>
-          <button
-            className="game__submit button"
-            type="submit"
-          >
-            Ответить
-          </button>
-        </form>
+          Правила просты:
+        </p>
+        <ul
+          className="emotion-9 emotion-10"
+        >
+          <li>
+            За 5 минут нужно ответить на все вопросы.
+          </li>
+          <li>
+            Можно допустить 3 ошибки.
+          </li>
+        </ul>
+        <p
+          className="emotion-7 emotion-8"
+        >
+          Удачи!
+        </p>
       </section>
-    </section>
+    </div>
   </main>
   <footer
-    className="emotion-10 emotion-11"
+    className="emotion-25 emotion-26"
   >
     <a
       href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
@@ -567,10 +539,10 @@ exports[`App correctly renders default markup 1`] = `
       />
     </a>
     <section
-      className="emotion-8 emotion-9"
+      className="emotion-23 emotion-24"
     >
       <a
-        className="emotion-2 emotion-3"
+        className="emotion-17 emotion-18"
         href="https://htmlacademy.ru"
       >
         <img
@@ -581,11 +553,11 @@ exports[`App correctly renders default markup 1`] = `
         />
       </a>
       <p
-        className="emotion-6 emotion-7"
+        className="emotion-21 emotion-22"
       >
         Сделано в 
         <a
-          className="emotion-4 emotion-5"
+          className="emotion-19 emotion-20"
           href="https://htmlacademy.ru"
         >
           HTML Academy
@@ -597,13 +569,13 @@ exports[`App correctly renders default markup 1`] = `
 `;
 
 exports[`App correctly renders genre question markup 1`] = `
-.emotion-12 {
+.emotion-27 {
   position: relative;
   box-sizing: border-box;
   background: url("../img/vinyl.png") center no-repeat;
 }
 
-.emotion-0 {
+.emotion-15 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -625,7 +597,101 @@ exports[`App correctly renders genre question markup 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-10 {
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box;
+  padding: 190px 0px 130px;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  margin: 25px 0px;
+}
+
+.emotion-3 {
+  padding: 0;
+  margin: 80px 0px 35px;
+  margin-left: 20px;
+  width: 100px;
+  height: 140px;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-transition: -webkit-transform ease-in-out 300ms;
+  -webkit-transition: transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+  cursor: pointer;
+}
+
+.emotion-3:hover,
+.emotion-3:focus {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.emotion-3:active {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.emotion-3 > svg {
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
+}
+
+.emotion-2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.emotion-5 {
+  margin: 0;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 33px;
+  color: #230d1a;
+  margin-top: 20px;
+}
+
+.emotion-7 {
+  margin: 10px 0px;
+}
+
+.emotion-9 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.emotion-25 {
   max-width: 680px;
   margin: 0 auto;
   display: -webkit-box;
@@ -639,199 +705,111 @@ exports[`App correctly renders genre question markup 1`] = `
   padding: 0px 20px;
 }
 
-.emotion-8 {
+.emotion-23 {
   text-align: right;
   color: #f0eed5;
   white-space: nowrap;
 }
 
-.emotion-2:hover,
-.emotion-2:focus,
-.emotion-2:active {
+.emotion-17:hover,
+.emotion-17:focus,
+.emotion-17:active {
   opacity: 0.8;
 }
 
-.emotion-6 {
+.emotion-21 {
   margin: 10px 0px 0px;
 }
 
-.emotion-4 {
+.emotion-19 {
   color: #ff9749;
   -webkit-transition: color ease-in-out 250ms;
   transition: color ease-in-out 250ms;
 }
 
-.emotion-4:hover,
-.emotion-4:focus,
-.emotion-4:active {
+.emotion-19:hover,
+.emotion-19:focus,
+.emotion-19:active {
   color: #f00000;
 }
 
 <div
-  className="emotion-12 emotion-13"
+  className="emotion-27 emotion-28"
 >
   <main
-    className="emotion-0 emotion-1"
+    className="emotion-15 emotion-16"
   >
-    <section
-      className="game game--artist"
+    <div
+      role="group"
+      style={
+        Object {
+          "outline": "none",
+        }
+      }
+      tabIndex="-1"
     >
-      <header
-        className="game__header"
+      <section
+        className="emotion-13 emotion-14"
       >
-        <a
-          className="game__back"
-          href="#"
+        <div
+          className="emotion-0 emotion-1"
         >
-          <span
-            className="visually-hidden"
-          >
-            Сыграть ещё раз
-          </span>
           <img
             alt="Угадай мелодию"
-            className="game__logo"
-            src="img/melody-logo-ginger.png"
+            height="83"
+            src="img/melody-logo.png"
+            width="186"
           />
-        </a>
-        <svg
-          className="timer"
-          viewBox="0 0 780 780"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            className="timer__line"
-            cx="390"
-            cy="390"
-            r="370"
-            style={
-              Object {
-                "filter": "url(#blur)",
-                "transform": "rotate(-90deg) scaleY(-1)",
-                "transformOrigin": "center",
-              }
-            }
-          />
-        </svg>
-        <div
-          className="timer__value"
-        >
-          <span
-            className="timer__mins"
-          >
-            03
-          </span>
-          <span
-            className="timer__dots"
-          >
-            :
-          </span>
-          <span
-            className="timer__secs"
-          >
-            30
-          </span>
         </div>
-        <div
-          className="game__mistakes"
-        />
-      </header>
-      <section
-        className="game__screen"
-      >
+        <button
+          className="emotion-3 emotion-4"
+          onClick={[Function]}
+        >
+          <svg
+            fill="#ff9749"
+            height="140"
+            width="100"
+          >
+            <polygon
+              points="0,0 100,70 0,140"
+            />
+          </svg>
+          <span
+            className="emotion-2"
+          >
+            Начать игру
+          </span>
+        </button>
         <h2
-          className="game__title"
+          className="emotion-5 emotion-6"
         >
-          Кто исполняет эту песню?
+          Правила игры
         </h2>
-        <div
-          className="game__track"
+        <p
+          className="emotion-7 emotion-8"
         >
-          <button
-            className="track__button track__button--play"
-            disabled={false}
-            onClick={[Function]}
-            type="button"
-          />
-          <div
-            className="track__status"
-          >
-            <audio
-              onCanPlayThrough={[Function]}
-              onEnded={[Function]}
-              onError={[Function]}
-              onLoadStart={[Function]}
-              onTimeUpdate={[Function]}
-              src="src#1"
-            />
-            <div
-              className="track__progress"
-              style={
-                Object {
-                  "background": "#707070",
-                  "height": "2px",
-                  "marginTop": "55px",
-                  "width": "0%",
-                }
-              }
-            />
-          </div>
-        </div>
-        <form
-          className="game__artist"
+          Правила просты:
+        </p>
+        <ul
+          className="emotion-9 emotion-10"
         >
-          <div
-            className="artist"
-          >
-            <input
-              className="artist__input visually-hidden"
-              id="artist-0"
-              name="answer"
-              onChange={[Function]}
-              type="radio"
-              value="artist#1"
-            />
-            <label
-              className="artist__name"
-              htmlFor="artist-0"
-            >
-              <img
-                alt="artist#1"
-                className="artist__picture"
-                src="picture#1"
-              />
-              artist#1
-            </label>
-          </div>
-          <div
-            className="artist"
-          >
-            <input
-              className="artist__input visually-hidden"
-              id="artist-1"
-              name="answer"
-              onChange={[Function]}
-              type="radio"
-              value="artist#2"
-            />
-            <label
-              className="artist__name"
-              htmlFor="artist-1"
-            >
-              <img
-                alt="artist#2"
-                className="artist__picture"
-                src="picture#2"
-              />
-              artist#2
-            </label>
-          </div>
-        </form>
+          <li>
+            За 5 минут нужно ответить на все вопросы.
+          </li>
+          <li>
+            Можно допустить 3 ошибки.
+          </li>
+        </ul>
+        <p
+          className="emotion-7 emotion-8"
+        >
+          Удачи!
+        </p>
       </section>
-    </section>
+    </div>
   </main>
   <footer
-    className="emotion-10 emotion-11"
+    className="emotion-25 emotion-26"
   >
     <a
       href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
@@ -845,10 +823,10 @@ exports[`App correctly renders genre question markup 1`] = `
       />
     </a>
     <section
-      className="emotion-8 emotion-9"
+      className="emotion-23 emotion-24"
     >
       <a
-        className="emotion-2 emotion-3"
+        className="emotion-17 emotion-18"
         href="https://htmlacademy.ru"
       >
         <img
@@ -859,11 +837,11 @@ exports[`App correctly renders genre question markup 1`] = `
         />
       </a>
       <p
-        className="emotion-6 emotion-7"
+        className="emotion-21 emotion-22"
       >
         Сделано в 
         <a
-          className="emotion-4 emotion-5"
+          className="emotion-19 emotion-20"
           href="https://htmlacademy.ru"
         >
           HTML Academy

@@ -1,4 +1,5 @@
 import React, {MouseEvent} from "react";
+import {RouteComponentProps} from "@reach/router";
 import * as Styles from "../../common.styles";
 import styled from "@emotion/styled";
 
@@ -70,7 +71,7 @@ export interface WelcomeScreenProps {
   onBeginClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-function WelcomeScreen(props: WelcomeScreenProps): JSX.Element {
+function WelcomeScreen(props: WelcomeScreenProps & RouteComponentProps): JSX.Element {
   const {maxTime, maxMistakes, onBeginClick} = props;
 
   return (

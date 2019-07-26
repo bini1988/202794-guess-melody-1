@@ -1,4 +1,5 @@
 import React, {PureComponent} from "react";
+import {RouteComponentProps} from "@reach/router";
 import {GameQuestion, GameAnswer, QuestionTypes} from "../../types.d";
 import GameMistakes from "../game-mistakes/game-mistakes";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen";
@@ -17,7 +18,7 @@ export interface GameScreenProps {
   onAnswer: (answer: GameAnswer[]) => void;
 }
 
-class GameScreen extends PureComponent<GameScreenProps> {
+class GameScreen extends PureComponent<GameScreenProps & RouteComponentProps> {
   public render() {
     const {questions, questionIndex} = this.props;
     const question = questions[questionIndex];

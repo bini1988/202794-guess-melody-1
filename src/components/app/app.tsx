@@ -1,4 +1,5 @@
 import React from "react";
+import {Router} from "@reach/router";
 import {connect} from "react-redux";
 import {Global} from "@emotion/core";
 import styled from "@emotion/styled";
@@ -10,6 +11,12 @@ import {AppState, handleStep, handleAnswer} from "../../reducer";
 import GameScreen from "../game-screen/game-screen";
 import WelcomeScreen from "../welcome-screen";
 import AppFooter from "../app-footer";
+
+const globalStyles = [
+  Styles.fontFaces,
+  Styles.body,
+  Styles.img
+];
 
 const AppWrapper = styled.div`
   position: relative;
@@ -39,25 +46,22 @@ export function App(props: AppProps) {
   return (
     <AppWrapper>
       <Global
-        styles={[
-          Styles.fontFaces,
-          Styles.body,
-          Styles.img,
-        ]}/>
+        styles={globalStyles}/>
       <AppMain>
-        {(questionIndex >= 0) ? (
+        <Router>
+          <WelcomeScreen
+            path="/"
+            maxTime={maxTime}
+            maxMistakes={maxMistakes}
+            onBeginClick={props.handleStep}/>
           <GameScreen
+            path="/game"
             questions={questions}
             questionIndex={questionIndex}
             mistakes={mistakes}
             time={3.5 * 60}
             onAnswer={props.handleAnswer}/>
-        ) : (
-          <WelcomeScreen
-            maxTime={maxTime}
-            maxMistakes={maxMistakes}
-            onBeginClick={props.handleStep}/>
-        )}
+        </Router>
       </AppMain>
       <AppFooter/>
     </AppWrapper>
