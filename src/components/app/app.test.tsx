@@ -1,7 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import serializer from "jest-emotion";
 import {TrackGenres, QuestionTypes, GameQuestion} from "../../types.d";
 import {App} from "./app";
+
+expect.addSnapshotSerializer(serializer);
 
 const questionsMock: GameQuestion[] = [
   {
