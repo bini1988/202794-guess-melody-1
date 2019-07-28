@@ -6,6 +6,7 @@ const FooterWrapper = styled.footer`
   ${Styles.container}
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0px 20px;
 `;
 
