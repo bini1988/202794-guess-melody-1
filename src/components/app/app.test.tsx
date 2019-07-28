@@ -1,28 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import serializer from "jest-emotion";
-import {TrackGenres, QuestionTypes, GameQuestion} from "../../types.d";
+import {questions} from "../../mocks/game";
+import {GameQuestion} from "../../types.d";
 import {App} from "./app";
 
 expect.addSnapshotSerializer(serializer);
-
-const questionsMock: GameQuestion[] = [
-  {
-    type: QuestionTypes.Genre,
-    genre: TrackGenres.Rock,
-    answers: [
-      {src: `src#1`, genre: TrackGenres.Rock},
-      {src: `src#2`, genre: TrackGenres.Jazz},
-    ]
-  }, {
-    type: QuestionTypes.Artist,
-    song: {artist: `artist#1`, src: `src#1`},
-    answers: [
-      {picture: `picture#1`, artist: `artist#1`},
-      {picture: `picture#2`, artist: `artist#2`},
-    ]
-  }
-];
 
 it(`App correctly renders default markup`, () => {
   const tree = renderer
@@ -31,7 +14,7 @@ it(`App correctly renders default markup`, () => {
           maxTime={5}
           maxMistakes={3}
           mistakes={0}
-          questions={questionsMock}
+          questions={questions as GameQuestion[]}
           questionIndex={0}
           handleStep={() => {}}
           handleAnswer={() => {}}/>
@@ -47,7 +30,7 @@ it(`App correctly renders genre question markup`, () => {
           maxTime={5}
           maxMistakes={3}
           mistakes={0}
-          questions={questionsMock}
+          questions={questions as GameQuestion[]}
           questionIndex={1}
           handleStep={() => {}}
           handleAnswer={() => {}}/>
@@ -63,7 +46,7 @@ it(`App correctly renders artist question markup`, () => {
           maxTime={5}
           maxMistakes={3}
           mistakes={0}
-          questions={questionsMock}
+          questions={questions as GameQuestion[]}
           questionIndex={1}
           handleStep={() => {}}
           handleAnswer={() => {}}/>
