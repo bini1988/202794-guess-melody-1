@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnswerLabel correctly renders default markup 1`] = `
+.emotion-1 {
+  width: 35px;
+  height: 49px;
+  cursor: pointer;
+  fill: #666666;
+  -webkit-transition: fill ease-in-out 250ms;
+  transition: fill ease-in-out 250ms;
+}
+
+.emotion-1 > svg {
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+}
+
+.emotion-0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+<label
+  className="emotion-1 emotion-2"
+>
+  <span
+    className="emotion-0"
+  >
+    label
+  </span>
+  <svg
+    height="49"
+    width="35"
+  >
+    <use
+      xlinkHref="#note"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    />
+  </svg>
+</label>
+`;

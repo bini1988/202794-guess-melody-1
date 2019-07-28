@@ -2,7 +2,7 @@ import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import {QuestionTypes, TrackGenres, GameQuestion} from "../../types.d";
-import {GenreQuestionScreen} from "./genre-question-screen";
+import {GenreQuestionScreen, GenreForm} from "./genre-question-screen";
 
 configure({adapter: new Adapter()});
 
@@ -24,11 +24,11 @@ describe(`GenreQuestionScreen`, () => {
           onAnswer={hanleAnswer}/>
     );
 
-    const gameForm = wrapper.find(`.game__tracks`);
+    const gameForm = wrapper.find(GenreForm);
     expect(gameForm).toHaveLength(1);
 
     questionMock.answers.forEach((it, itIndex) => {
-      const gameInput = gameForm.find(`.game__input[id='answer-${itIndex}']`);
+      const gameInput = gameForm.find(`input[id='answer-${itIndex}']`);
       expect(gameInput).toHaveLength(1);
 
       gameInput.simulate(`change`);

@@ -1,60 +1,258 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GenreQuestionScreen correctly renders default markup 1`] = `
+.emotion-70 {
+  position: relative;
+  width: 460px;
+  margin: 0 auto;
+  margin-top: 75px;
+  margin-bottom: 85px;
+}
+
+.emotion-0 {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 33px;
+  font-weight: 300;
+  font-style: italic;
+  color: #230d1a;
+  text-align: center;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 55px;
+  margin-bottom: 30px;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding: 0;
+  width: 35px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  -webkit-transition: -webkit-transform ease-in-out 300ms;
+  -webkit-transition: transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+  outline: none;
+  cursor: pointer;
+}
+
+.emotion-3:not(:disabled):hover,
+.emotion-3:not(:disabled):focus {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.emotion-3:not(:disabled):active {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.emotion-3 svg {
+  fill: #ff9749;
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+}
+
+.emotion-2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.emotion-5 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  margin: 0 10px;
+  height: 55px;
+  width: 370px;
+}
+
+.emotion-5 > svg {
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+}
+
+.emotion-14 {
+  width: 35px;
+  height: 49px;
+}
+
+.emotion-9 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.emotion-9:checked + .emotion-13 {
+  fill: #ff9749;
+}
+
+.emotion-12 {
+  width: 35px;
+  height: 49px;
+  cursor: pointer;
+  fill: #666666;
+  -webkit-transition: fill ease-in-out 250ms;
+  transition: fill ease-in-out 250ms;
+}
+
+.emotion-12 > svg {
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+}
+
+.emotion-66 {
+  display: block;
+  padding: 5px 20px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #230d1a;
+  background-color: #f0eed5;
+  border: 3px solid #000;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px -5px #000;
+  cursor: pointer;
+  -webkit-transition: ease-in-out 350ms;
+  transition: ease-in-out 350ms;
+  font-style: italic;
+  margin: 35px auto 15px;
+}
+
+.emotion-66:disabled {
+  color: #808080;
+  border: 4px solid #ffc396;
+  cursor: default;
+}
+
+.emotion-66:hover,
+.emotion-66:focus,
+.emotion-66:active {
+  color: #ff9749;
+  border-color: #ff9749;
+}
+
 <section
-  className="game__screen"
+  className="emotion-70 emotion-71"
 >
   <h2
-    className="game__title"
+    className="emotion-0 emotion-1"
   >
     Выберите rock треки
   </h2>
   <form
-    className="game__tracks"
+    className="emotion-68 emotion-69"
     onSubmit={[Function]}
   >
     <div
-      className="track"
+      className="emotion-16 emotion-17"
     >
       <div
-        className="game__track"
+        className="emotion-7 emotion-8"
       >
         <button
-          className="track__button track__button--play"
+          className="emotion-3 emotion-4"
           disabled={false}
           onClick={[Function]}
           type="button"
-        />
-        <div
-          className="track__status"
         >
+          <svg
+            height="50"
+            width="35"
+          >
+            <use
+              xlinkHref="#play"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
+          <span
+            className="emotion-2"
+          >
+            Проиграть трек
+          </span>
+        </button>
+        <div
+          className="emotion-5 emotion-6"
+        >
+          <svg
+            height="55"
+            width="370"
+          >
+            <use
+              xlinkHref="#equalizer"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+            <rect
+              clipPath="url(#equalizer-lines)"
+              fill="#ff9749"
+              height="100%"
+              width="0%"
+            />
+          </svg>
           <audio
             onCanPlayThrough={[Function]}
             onEnded={[Function]}
             onError={[Function]}
             onLoadStart={[Function]}
             onTimeUpdate={[Function]}
-            src=""
-          />
-          <div
-            className="track__progress"
-            style={
-              Object {
-                "background": "#707070",
-                "height": "2px",
-                "marginTop": "55px",
-                "width": "0%",
-              }
-            }
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg"
           />
         </div>
       </div>
       <div
-        className="game__answer"
+        className="emotion-14 emotion-15"
       >
         <input
           checked={false}
-          className="game__input visually-hidden"
+          className="emotion-9 emotion-10"
           id="answer-0"
           name="answer"
           onChange={[Function]}
@@ -62,71 +260,292 @@ exports[`GenreQuestionScreen correctly renders default markup 1`] = `
           value="rock"
         />
         <label
-          className="game__check"
+          className="emotion-12 emotion-13"
           htmlFor="answer-0"
         >
-          Отметить
+          <span
+            className="emotion-2"
+          >
+            Отметить трек #1
+          </span>
+          <svg
+            height="49"
+            width="35"
+          >
+            <use
+              xlinkHref="#note"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
         </label>
       </div>
     </div>
     <div
-      className="track"
+      className="emotion-16 emotion-17"
     >
       <div
-        className="game__track"
+        className="emotion-7 emotion-8"
       >
         <button
-          className="track__button track__button--play"
+          className="emotion-3 emotion-4"
           disabled={false}
           onClick={[Function]}
           type="button"
-        />
-        <div
-          className="track__status"
         >
+          <svg
+            height="50"
+            width="35"
+          >
+            <use
+              xlinkHref="#play"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
+          <span
+            className="emotion-2"
+          >
+            Проиграть трек
+          </span>
+        </button>
+        <div
+          className="emotion-5 emotion-6"
+        >
+          <svg
+            height="55"
+            width="370"
+          >
+            <use
+              xlinkHref="#equalizer"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+            <rect
+              clipPath="url(#equalizer-lines)"
+              fill="#ff9749"
+              height="100%"
+              width="0%"
+            />
+          </svg>
           <audio
             onCanPlayThrough={[Function]}
             onEnded={[Function]}
             onError={[Function]}
             onLoadStart={[Function]}
             onTimeUpdate={[Function]}
-            src=""
-          />
-          <div
-            className="track__progress"
-            style={
-              Object {
-                "background": "#707070",
-                "height": "2px",
-                "marginTop": "55px",
-                "width": "0%",
-              }
-            }
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg"
           />
         </div>
       </div>
       <div
-        className="game__answer"
+        className="emotion-14 emotion-15"
       >
         <input
           checked={false}
-          className="game__input visually-hidden"
+          className="emotion-9 emotion-10"
           id="answer-1"
+          name="answer"
+          onChange={[Function]}
+          type="checkbox"
+          value="blues"
+        />
+        <label
+          className="emotion-12 emotion-13"
+          htmlFor="answer-1"
+        >
+          <span
+            className="emotion-2"
+          >
+            Отметить трек #2
+          </span>
+          <svg
+            height="49"
+            width="35"
+          >
+            <use
+              xlinkHref="#note"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      className="emotion-16 emotion-17"
+    >
+      <div
+        className="emotion-7 emotion-8"
+      >
+        <button
+          className="emotion-3 emotion-4"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            height="50"
+            width="35"
+          >
+            <use
+              xlinkHref="#play"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
+          <span
+            className="emotion-2"
+          >
+            Проиграть трек
+          </span>
+        </button>
+        <div
+          className="emotion-5 emotion-6"
+        >
+          <svg
+            height="55"
+            width="370"
+          >
+            <use
+              xlinkHref="#equalizer"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+            <rect
+              clipPath="url(#equalizer-lines)"
+              fill="#ff9749"
+              height="100%"
+              width="0%"
+            />
+          </svg>
+          <audio
+            onCanPlayThrough={[Function]}
+            onEnded={[Function]}
+            onError={[Function]}
+            onLoadStart={[Function]}
+            onTimeUpdate={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg"
+          />
+        </div>
+      </div>
+      <div
+        className="emotion-14 emotion-15"
+      >
+        <input
+          checked={false}
+          className="emotion-9 emotion-10"
+          id="answer-2"
           name="answer"
           onChange={[Function]}
           type="checkbox"
           value="jazz"
         />
         <label
-          className="game__check"
-          htmlFor="answer-1"
+          className="emotion-12 emotion-13"
+          htmlFor="answer-2"
         >
-          Отметить
+          <span
+            className="emotion-2"
+          >
+            Отметить трек #3
+          </span>
+          <svg
+            height="49"
+            width="35"
+          >
+            <use
+              xlinkHref="#note"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div
+      className="emotion-16 emotion-17"
+    >
+      <div
+        className="emotion-7 emotion-8"
+      >
+        <button
+          className="emotion-3 emotion-4"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            height="50"
+            width="35"
+          >
+            <use
+              xlinkHref="#play"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
+          <span
+            className="emotion-2"
+          >
+            Проиграть трек
+          </span>
+        </button>
+        <div
+          className="emotion-5 emotion-6"
+        >
+          <svg
+            height="55"
+            width="370"
+          >
+            <use
+              xlinkHref="#equalizer"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+            <rect
+              clipPath="url(#equalizer-lines)"
+              fill="#ff9749"
+              height="100%"
+              width="0%"
+            />
+          </svg>
+          <audio
+            onCanPlayThrough={[Function]}
+            onEnded={[Function]}
+            onError={[Function]}
+            onLoadStart={[Function]}
+            onTimeUpdate={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Uganda_flag_and_national_anthem_-_Oh_Uganda_Land_o.ogg"
+          />
+        </div>
+      </div>
+      <div
+        className="emotion-14 emotion-15"
+      >
+        <input
+          checked={false}
+          className="emotion-9 emotion-10"
+          id="answer-3"
+          name="answer"
+          onChange={[Function]}
+          type="checkbox"
+          value="rock"
+        />
+        <label
+          className="emotion-12 emotion-13"
+          htmlFor="answer-3"
+        >
+          <span
+            className="emotion-2"
+          >
+            Отметить трек #4
+          </span>
+          <svg
+            height="49"
+            width="35"
+          >
+            <use
+              xlinkHref="#note"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            />
+          </svg>
         </label>
       </div>
     </div>
     <button
-      className="game__submit button"
+      className="emotion-66 emotion-67"
       type="submit"
     >
       Ответить

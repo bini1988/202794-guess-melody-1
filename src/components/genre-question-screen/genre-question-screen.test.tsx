@@ -1,22 +1,17 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import {QuestionTypes, TrackGenres, GameQuestion} from "../../types.d";
+import serializer from "jest-emotion";
+import {GenreQuestion} from "../../types.d";
+import {genreQuestion} from "../../mocks/game";
 import GenreQuestionScreen from "./genre-question-screen";
 
-const questionMock: GameQuestion = {
-  type: QuestionTypes.Genre,
-  genre: TrackGenres.Rock,
-  answers: [
-    {src: ``, genre: TrackGenres.Rock},
-    {src: ``, genre: TrackGenres.Jazz}
-  ]
-};
+expect.addSnapshotSerializer(serializer);
 
 it(`GenreQuestionScreen correctly renders default markup`, () => {
   const tree = renderer
     .create(
         <GenreQuestionScreen
-          question={questionMock}/>
+          question={genreQuestion as GenreQuestion}/>
     ).toJSON();
 
   expect(tree).toMatchSnapshot();
