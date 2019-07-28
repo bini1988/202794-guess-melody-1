@@ -1,7 +1,7 @@
 import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import AudioPlayer from "./audio-player";
+import AudioPlayer, {AudioButton} from "./audio-player";
 
 configure({adapter: new Adapter()});
 
@@ -20,7 +20,7 @@ describe(`AudioPlayer`, () => {
           onPause={hanlePause}/>
     );
 
-    const button = wrapper.find(`.track__button`);
+    const button = wrapper.find(AudioButton);
     button.simulate(`click`);
 
     expect(hanlePlay).toBeCalledWith(wrapper.instance());
@@ -58,7 +58,7 @@ describe(`AudioPlayer`, () => {
         <AudioPlayer src=""/>
     );
 
-    const button = wrapper.find(`.track__button`);
+    const button = wrapper.find(AudioButton);
     button.simulate(`click`);
 
     expect(wrapper.state(`isPlaying`)).toEqual(true);

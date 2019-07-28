@@ -1,4 +1,47 @@
 import React, {PureComponent, RefObject} from "react";
+import styled from "@emotion/styled";
+import * as Styles from "../../common.styles";
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const AudioStatus = styled.div`
+  flex: 0 1 auto;
+  margin: 0 10px;
+  height: 55px;
+  width: 370px;
+
+  & > svg {
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+  }
+`;
+
+export const AudioButton = styled.button`
+  padding: 0;
+  width: 35px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  transition: transform ease-in-out 300ms;
+  outline: none;
+  cursor: pointer;
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
+    transform: scale(1.05);
+  }
+  &:not(:disabled):active {
+    transform: scale(1.04);
+  }
+
+  & svg {
+    fill: #ff9749;
+    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+  }
+`;
 
 export interface AudioPlayerProps {
   /** Путь к файлу с композицией */
@@ -60,16 +103,30 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
   public render() {
     const {isError, isLoading, isPlaying, progress} = this.state;
     const {src} = this.props;
-    const playClass = !isPlaying ? `track__button--play` : ``;
 
     return (
-      <div className="game__track">
-        <button
-          className={`track__button ${playClass}`}
+      <Wrapper>
+        <AudioButton
           type="button"
           disabled={isError || isLoading}
-          onClick={this._handlePlayBtn}/>
-        <div className="track__status">
+          onClick={this._handlePlayBtn}>
+          <svg width="35" height="50">
+            <use
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              xlinkHref={isPlaying ? `#pause` : `#play`}/>
+          </svg>
+          <span css={Styles.hidden}>
+            {isPlaying
+              ? `Поставить трек на паузу`
+              : `Проиграть трек`
+            }
+          </span>
+        </AudioButton>
+        <AudioStatus>
+          <svg width="370" height="55">
+            <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#equalizer"/>
+            <rect width={`${progress}%`} height="100%" fill="#ff9749" clipPath="url(#equalizer-lines)"/>
+          </svg>
           <audio
             ref={this._audioRef}
             src={src}
@@ -78,16 +135,8 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
             onEnded={this._handleEnded}
             onLoadStart={this._handleLoadStart}
             onError={this._handleError}/>
-          <div
-            className="track__progress"
-            style={{
-              height: `2px`,
-              background: `#707070`,
-              marginTop: `55px`,
-              width: `${progress}%`,
-            }}/>
-        </div>
-      </div>
+        </AudioStatus>
+      </Wrapper>
     );
   }
 
@@ -157,7 +206,7 @@ class AudioPlayer extends PureComponent<AudioPlayerProps, AudioPlayerState> {
     const {currentTime, duration} = audio;
     const nextProgress = Math.trunc((currentTime / duration) * 100);
 
-    if (Math.abs(nextProgress - progress) >= 1) {
+    if (Math.abs(nextProgress - progress) >= 0.5) {
       this.setState({progress: nextProgress});
     }
   }

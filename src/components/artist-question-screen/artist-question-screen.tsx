@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import * as Styles from "../../common.styles";
 import {ArtistQuestion, GameAnswer} from "../../types.d";
-import AudioPlayer from "../audio-player/audio-player";
+import AudioPlayer from "../audio-player";
 
 const Wrapper = styled.section`
   position: relative;
