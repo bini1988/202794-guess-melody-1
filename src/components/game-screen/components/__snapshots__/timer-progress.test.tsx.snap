@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimerProgress correctly renders default markup 1`] = `
+.emotion-0 {
+  position: absolute;
+  left: 8px;
+  top: 56px;
+  width: 665px;
+  height: 665px;
+  z-index: 0;
+}
+
+<svg
+  className="emotion-0"
+  viewBox="0 0 780 780"
+>
+  <circle
+    cx="390"
+    cy="390"
+    r={370}
+    style={
+      Object {
+        "fill": "transparent",
+        "filter": "url(#blur)",
+        "stroke": "#ff9749",
+        "strokeDasharray": 2324.7785636564467,
+        "strokeDashoffset": 1162.3892818282234,
+        "strokeLinecap": "round",
+        "strokeWidth": "15px",
+        "transform": "rotate(-90deg)",
+        "transformOrigin": "center",
+      }
+    }
+  />
+</svg>
+`;

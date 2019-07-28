@@ -1,106 +1,152 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GameScreen correctly renders default markup 1`] = `
-<section
-  className="game game--genre"
->
-  <header
-    className="game__header"
+Array [
+  <div
+    className="css-1rm87k-Header e13hirzn3"
   >
     <a
-      className="game__back"
+      className="css-14gj1el-BackLink e13hirzn2"
       href="#"
     >
       <span
-        className="visually-hidden"
+        className="css-jclwii-hidden"
       >
         Сыграть ещё раз
       </span>
       <img
         alt="Угадай мелодию"
-        className="game__logo"
+        height="76"
         src="img/melody-logo-ginger.png"
+        width="177"
       />
     </a>
+    <div
+      className="finished css-q0otcz-TimerValue e13hirzn1"
+    >
+      00
+      <span
+        className="css-1vqgbi1-TimerDots e13hirzn0"
+      >
+        :
+      </span>
+      05
+    </div>
     <svg
-      className="timer"
+      className="css-10j17y8-wrapperCss"
       viewBox="0 0 780 780"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <circle
-        className="timer__line"
         cx="390"
         cy="390"
-        r="370"
+        r={370}
         style={
           Object {
+            "fill": "transparent",
             "filter": "url(#blur)",
-            "transform": "rotate(-90deg) scaleY(-1)",
+            "stroke": "#ff9749",
+            "strokeDasharray": 2324.7785636564467,
+            "strokeDashoffset": 1162.3892818282234,
+            "strokeLinecap": "round",
+            "strokeWidth": "15px",
+            "transform": "rotate(-90deg)",
             "transformOrigin": "center",
           }
         }
       />
     </svg>
     <div
-      className="timer__value"
+      className="css-80w3o2-Wrapper e1hh9ndb0"
     >
-      <span
-        className="timer__mins"
+      <svg
+        fill="#cc2c2c"
+        height="49"
+        width="35"
       >
-        00
-      </span>
-      <span
-        className="timer__dots"
+        <use
+          xlinkHref="#note"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <svg
+        fill="#cc2c2c"
+        height="49"
+        width="35"
       >
-        :
-      </span>
-      <span
-        className="timer__secs"
+        <use
+          xlinkHref="#note"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <svg
+        fill="#cc2c2c"
+        height="49"
+        width="35"
       >
-        05
-      </span>
+        <use
+          xlinkHref="#note"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
     </div>
-    <div
-      className="game__mistakes"
-    >
-      <div
-        className="wrong"
-      />
-      <div
-        className="wrong"
-      />
-      <div
-        className="wrong"
-      />
-    </div>
-  </header>
+  </div>,
   <section
-    className="game__screen"
+    className="css-jeqe0b-Wrapper emn09y80"
   >
     <h2
-      className="game__title"
+      className="css-1imk8mt-Title emn09y81"
     >
       Выберите rock треки
     </h2>
     <form
-      className="game__tracks"
+      className="css-qrfdrs-GenreForm emn09y82"
       onSubmit={[Function]}
     >
       <div
-        className="track"
+        className="css-sh9h6u-AnswerWrapper emn09y83"
       >
         <div
-          className="game__track"
+          className="css-1mcnngh-Wrapper e1t6b9pv0"
         >
           <button
-            className="track__button track__button--play"
+            className="css-1mf041-AudioButton e1t6b9pv2"
             disabled={false}
             onClick={[Function]}
             type="button"
-          />
-          <div
-            className="track__status"
           >
+            <svg
+              height="50"
+              width="35"
+            >
+              <use
+                xlinkHref="#play"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              className="css-jclwii-hidden"
+            >
+              Проиграть трек
+            </span>
+          </button>
+          <div
+            className="css-axoqwz-AudioStatus e1t6b9pv1"
+          >
+            <svg
+              height="55"
+              width="370"
+            >
+              <use
+                xlinkHref="#equalizer"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              />
+              <rect
+                clipPath="url(#equalizer-lines)"
+                fill="#ff9749"
+                height="100%"
+                width="0%"
+              />
+            </svg>
             <audio
               onCanPlayThrough={[Function]}
               onEnded={[Function]}
@@ -109,25 +155,14 @@ exports[`GameScreen correctly renders default markup 1`] = `
               onTimeUpdate={[Function]}
               src="src#1"
             />
-            <div
-              className="track__progress"
-              style={
-                Object {
-                  "background": "#707070",
-                  "height": "2px",
-                  "marginTop": "55px",
-                  "width": "0%",
-                }
-              }
-            />
           </div>
         </div>
         <div
-          className="game__answer"
+          className="css-isx2c5-Answer emn09y84"
         >
           <input
             checked={false}
-            className="game__input visually-hidden"
+            className="css-1th4hhl-AnswerInput-hidden emn09y86"
             id="answer-0"
             name="answer"
             onChange={[Function]}
@@ -135,28 +170,71 @@ exports[`GameScreen correctly renders default markup 1`] = `
             value="rock"
           />
           <label
-            className="game__check"
+            className="css-17gb7fl-AnswerLabel emn09y85"
             htmlFor="answer-0"
           >
-            Отметить
+            <span
+              className="css-jclwii-hidden"
+            >
+              Отметить трек #1
+            </span>
+            <svg
+              height="49"
+              width="35"
+            >
+              <use
+                xlinkHref="#note"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
           </label>
         </div>
       </div>
       <div
-        className="track"
+        className="css-sh9h6u-AnswerWrapper emn09y83"
       >
         <div
-          className="game__track"
+          className="css-1mcnngh-Wrapper e1t6b9pv0"
         >
           <button
-            className="track__button track__button--play"
+            className="css-1mf041-AudioButton e1t6b9pv2"
             disabled={false}
             onClick={[Function]}
             type="button"
-          />
-          <div
-            className="track__status"
           >
+            <svg
+              height="50"
+              width="35"
+            >
+              <use
+                xlinkHref="#play"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
+            <span
+              className="css-jclwii-hidden"
+            >
+              Проиграть трек
+            </span>
+          </button>
+          <div
+            className="css-axoqwz-AudioStatus e1t6b9pv1"
+          >
+            <svg
+              height="55"
+              width="370"
+            >
+              <use
+                xlinkHref="#equalizer"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              />
+              <rect
+                clipPath="url(#equalizer-lines)"
+                fill="#ff9749"
+                height="100%"
+                width="0%"
+              />
+            </svg>
             <audio
               onCanPlayThrough={[Function]}
               onEnded={[Function]}
@@ -165,25 +243,14 @@ exports[`GameScreen correctly renders default markup 1`] = `
               onTimeUpdate={[Function]}
               src="src#2"
             />
-            <div
-              className="track__progress"
-              style={
-                Object {
-                  "background": "#707070",
-                  "height": "2px",
-                  "marginTop": "55px",
-                  "width": "0%",
-                }
-              }
-            />
           </div>
         </div>
         <div
-          className="game__answer"
+          className="css-isx2c5-Answer emn09y84"
         >
           <input
             checked={false}
-            className="game__input visually-hidden"
+            className="css-1th4hhl-AnswerInput-hidden emn09y86"
             id="answer-1"
             name="answer"
             onChange={[Function]}
@@ -191,20 +258,33 @@ exports[`GameScreen correctly renders default markup 1`] = `
             value="jazz"
           />
           <label
-            className="game__check"
+            className="css-17gb7fl-AnswerLabel emn09y85"
             htmlFor="answer-1"
           >
-            Отметить
+            <span
+              className="css-jclwii-hidden"
+            >
+              Отметить трек #2
+            </span>
+            <svg
+              height="49"
+              width="35"
+            >
+              <use
+                xlinkHref="#note"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              />
+            </svg>
           </label>
         </div>
       </div>
       <button
-        className="game__submit button"
+        className="css-1yqpnuh-SubmitButton-button emn09y87"
         type="submit"
       >
         Ответить
       </button>
     </form>
-  </section>
-</section>
+  </section>,
+]
 `;
