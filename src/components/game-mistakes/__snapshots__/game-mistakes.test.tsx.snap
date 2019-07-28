@@ -1,14 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GameMistakes correctly renders default markup 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 225px;
+}
+
+.emotion-0 svg {
+  margin: 0 2px;
+}
+
 <div
-  className="game__mistakes"
+  className="emotion-0 emotion-1"
 >
-  <div
-    className="wrong"
-  />
-  <div
-    className="wrong"
-  />
+  <svg
+    fill="#cc2c2c"
+    height="49"
+    width="35"
+  >
+    <use
+      xlinkHref="#note"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    />
+  </svg>
+  <svg
+    fill="#cc2c2c"
+    height="49"
+    width="35"
+  >
+    <use
+      xlinkHref="#note"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    />
+  </svg>
 </div>
 `;
