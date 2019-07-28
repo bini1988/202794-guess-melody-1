@@ -1,9 +1,11 @@
 import React from "react";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import serializer from "jest-emotion";
 import {QuestionTypes, GameQuestion} from "../../types.d";
-import ArtistQuestionScreen from "./artist-question-screen";
+import ArtistQuestionScreen, {ArtistForm} from "./artist-question-screen";
 
+expect.addSnapshotSerializer(serializer);
 configure({adapter: new Adapter()});
 
 describe(`ArtistQuestionScreen`, () => {
@@ -26,13 +28,13 @@ describe(`ArtistQuestionScreen`, () => {
           onAnswer={hanleAnswer}/>
     );
 
-    const gameForm = wrapper.find(`.game__artist`);
-    expect(gameForm).toHaveLength(1);
+    const form = wrapper.find(ArtistForm);
+    expect(form).toHaveLength(1);
 
-    const gameAnswer = gameForm.find(`#artist-${answerIndex}`);
-    expect(gameAnswer).toHaveLength(1);
+    const formAnswer = form.find(`input#artist-${answerIndex}`);
+    expect(formAnswer).toHaveLength(1);
 
-    gameAnswer.simulate(`change`);
+    formAnswer.simulate(`change`);
 
     expect(hanleAnswer).toHaveBeenCalledTimes(1);
     expect(hanleAnswer).toHaveBeenCalledWith([answer]);

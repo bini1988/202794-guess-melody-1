@@ -1,117 +1,294 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArtistQuestionScreen correctly renders default markup 1`] = `
+.emotion-32 {
+  position: relative;
+  width: 440px;
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 105px;
+}
+
+.emotion-0 {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 33px;
+  font-weight: 300;
+  font-style: italic;
+  color: #230d1a;
+  text-align: center;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding: 0;
+  width: 35px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  -webkit-transition: -webkit-transform ease-in-out 300ms;
+  -webkit-transition: transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+  outline: none;
+  cursor: pointer;
+}
+
+.emotion-3:not(:disabled):hover,
+.emotion-3:not(:disabled):focus {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.emotion-3:not(:disabled):active {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.emotion-3 svg {
+  fill: #ff9749;
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.2));
+}
+
+.emotion-2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.emotion-5 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  margin: 0 10px;
+  height: 55px;
+  width: 370px;
+}
+
+.emotion-5 > svg {
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+}
+
+.emotion-30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.emotion-14 {
+  width: 134px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.emotion-14:hover .emotion-11 {
+  border-color: #ff9749;
+}
+
+.emotion-14:active .emotion-11 {
+  border-color: #f00000;
+}
+
+.emotion-10 {
+  box-sizing: border-box;
+  width: 134px;
+  height: 134px;
+  margin-bottom: 5px;
+  background-color: #f0eed5;
+  border: solid 5px #230d1a;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px -5px #000;
+  -webkit-transition: border-color ease-in-out 350ms;
+  transition: border-color ease-in-out 350ms;
+}
+
+.emotion-10 img {
+  max-width: 100%;
+  height: auto;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 <section
-  className="game__screen"
+  className="emotion-32 emotion-33"
 >
   <h2
-    className="game__title"
+    className="emotion-0 emotion-1"
   >
     Кто исполняет эту песню?
   </h2>
   <div
-    className="game__track"
+    className="emotion-7 emotion-8"
   >
     <button
-      className="track__button track__button--play"
+      className="emotion-3 emotion-4"
       disabled={false}
       onClick={[Function]}
       type="button"
-    />
-    <div
-      className="track__status"
     >
+      <svg
+        height="50"
+        width="35"
+      >
+        <use
+          xlinkHref="#play"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        />
+      </svg>
+      <span
+        className="emotion-2"
+      >
+        Проиграть трек
+      </span>
+    </button>
+    <div
+      className="emotion-5 emotion-6"
+    >
+      <svg
+        height="55"
+        width="370"
+      >
+        <use
+          xlinkHref="#equalizer"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        />
+        <rect
+          clipPath="url(#equalizer-lines)"
+          fill="#ff9749"
+          height="100%"
+          width="0%"
+        />
+      </svg>
       <audio
         onCanPlayThrough={[Function]}
         onEnded={[Function]}
         onError={[Function]}
         onLoadStart={[Function]}
         onTimeUpdate={[Function]}
-        src=""
-      />
-      <div
-        className="track__progress"
-        style={
-          Object {
-            "background": "#707070",
-            "height": "2px",
-            "marginTop": "55px",
-            "width": "0%",
-          }
-        }
+        src="https://upload.wikimedia.org/wikipedia/commons/d/db/Gimn_Sovetskogo_Soyuza_%281977_Vocal%29.oga"
       />
     </div>
   </div>
   <form
-    className="game__artist"
+    className="emotion-30 emotion-31"
   >
     <div
-      className="artist"
+      className="emotion-14 emotion-15"
     >
       <input
-        className="artist__input visually-hidden"
+        className="emotion-2"
         id="artist-0"
         name="answer"
         onChange={[Function]}
         type="radio"
-        value="artist#1"
+        value="John Snow"
       />
       <label
-        className="artist__name"
+        className="emotion-12 emotion-13"
         htmlFor="artist-0"
       >
-        <img
-          alt="artist#1"
-          className="artist__picture"
-          src=""
-        />
-        artist#1
+        <div
+          className="emotion-10 emotion-11"
+        >
+          <img
+            alt="John Snow"
+            height="134"
+            src="https://i.pravatar.cc/134x134"
+            width="134"
+          />
+        </div>
+        John Snow
       </label>
     </div>
     <div
-      className="artist"
+      className="emotion-14 emotion-15"
     >
       <input
-        className="artist__input visually-hidden"
+        className="emotion-2"
         id="artist-1"
         name="answer"
         onChange={[Function]}
         type="radio"
-        value="artist#2"
+        value="Jack Daniels"
       />
       <label
-        className="artist__name"
+        className="emotion-12 emotion-13"
         htmlFor="artist-1"
       >
-        <img
-          alt="artist#2"
-          className="artist__picture"
-          src=""
-        />
-        artist#2
+        <div
+          className="emotion-10 emotion-11"
+        >
+          <img
+            alt="Jack Daniels"
+            height="134"
+            src="https://i.pravatar.cc/134x134"
+            width="134"
+          />
+        </div>
+        Jack Daniels
       </label>
     </div>
     <div
-      className="artist"
+      className="emotion-14 emotion-15"
     >
       <input
-        className="artist__input visually-hidden"
+        className="emotion-2"
         id="artist-2"
         name="answer"
         onChange={[Function]}
         type="radio"
-        value="artist#3"
+        value="Jim Beam"
       />
       <label
-        className="artist__name"
+        className="emotion-12 emotion-13"
         htmlFor="artist-2"
       >
-        <img
-          alt="artist#3"
-          className="artist__picture"
-          src=""
-        />
-        artist#3
+        <div
+          className="emotion-10 emotion-11"
+        >
+          <img
+            alt="Jim Beam"
+            height="134"
+            src="https://i.pravatar.cc/134x134"
+            width="134"
+          />
+        </div>
+        Jim Beam
       </label>
     </div>
   </form>
