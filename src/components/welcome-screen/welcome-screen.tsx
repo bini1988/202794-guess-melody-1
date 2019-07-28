@@ -1,4 +1,4 @@
-import React, {MouseEvent} from "react";
+import React, {MouseEvent, Component} from "react";
 import {RouteComponentProps} from "@reach/router";
 import * as Styles from "../../common.styles";
 import styled from "@emotion/styled";
@@ -10,7 +10,7 @@ const WelcomeWrapper = styled.section`
   flex-wrap: wrap;
   position: relative;
   box-sizing: border-box;
-  padding: 190px 0px 130px;
+  padding: 210px 0px 130px;
   width: 100%;
   height: 100%;
 `;
@@ -21,7 +21,7 @@ const Logo = styled.div`
 
 export const Button = styled.button`
   padding: 0;
-  margin: 80px 0px 35px;
+  margin: 75px 0px 35px;
   margin-left: 20px;
   width: 100px;
   height: 140px;
@@ -30,14 +30,22 @@ export const Button = styled.button`
   outline: none;
   transition: transform ease-in-out 300ms;
   cursor: pointer;
+  transform-origin: center;
+  animation-name: ${(props) => props.disabled && Styles.waiting};
+  animation-duration: 1.0s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 
-  &:hover, &:focus {
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
     transform: scale(1.05);
   }
-  &:active {
+  &:not(:disabled):active {
     transform: scale(1.04);
   }
   & > svg {
+    fill: #ff9749;
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.4));
   }
 `;
@@ -63,37 +71,55 @@ const ItemsList = styled.ul`
 `;
 
 export interface WelcomeScreenProps {
+  /** В процессе загрузки */
+  fetching?: boolean;
   /** Игровое время, мин */
-  maxTime: number;
+  maxTime?: number;
   /** Количество допустимых ошибок */
-  maxMistakes: number;
+  maxMistakes?: number;
+  /** Получить список игровых вопросов */
+  fetchQuestions?: () => void;
   /** Обработчки клика по кнопке запуска игры */
   onBeginClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-function WelcomeScreen(props: WelcomeScreenProps & RouteComponentProps): JSX.Element {
-  const {maxTime, maxMistakes, onBeginClick} = props;
+class WelcomeScreen extends Component<WelcomeScreenProps & RouteComponentProps> {
+  public componentDidMount() {
+    if (this.props.fetchQuestions) {
+      this.props.fetchQuestions();
+    }
+  }
 
-  return (
-    <WelcomeWrapper>
-      <Logo>
-        <img src="img/melody-logo.png" alt="Угадай мелодию" width="186" height="83"/>
-      </Logo>
-      <Button onClick={onBeginClick}>
-        <svg height="140" width="100" fill="#ff9749">
-          <polygon points="0,0 100,70 0,140"/>
-        </svg>
-        <span css={Styles.hidden}>{`Начать игру`}</span>
-      </Button>
-      <Title>{`Правила игры`}</Title>
-      <Text>{`Правила просты:`}</Text>
-      <ItemsList>
-        <li>{`За ${maxTime} минут нужно ответить на все вопросы.`}</li>
-        <li>{`Можно допустить ${maxMistakes} ошибки.`}</li>
-      </ItemsList>
-      <Text>{`Удачи!`}</Text>
-    </WelcomeWrapper>
-  );
+  public render() {
+    const {maxTime, maxMistakes, fetching, onBeginClick} = this.props;
+
+    return (
+      <WelcomeWrapper>
+        <Logo>
+          <img
+            src="img/melody-logo.png"
+            alt="Угадай мелодию"
+            width="186"
+            height="83"/>
+        </Logo>
+        <Button
+          disabled={fetching}
+          onClick={onBeginClick}>
+          <svg height="140" width="100">
+            <polygon points="0,0 100,70 0,140"/>
+          </svg>
+          <span css={Styles.hidden}>{`Начать игру`}</span>
+        </Button>
+        <Title>{`Правила игры`}</Title>
+        <Text>{`Правила просты:`}</Text>
+        <ItemsList>
+          <li>{`За ${maxTime} минут нужно ответить на все вопросы.`}</li>
+          <li>{`Можно допустить ${maxMistakes} ошибки.`}</li>
+        </ItemsList>
+        <Text>{`Удачи!`}</Text>
+      </WelcomeWrapper>
+    );
+  }
 }
 
 export default WelcomeScreen;
