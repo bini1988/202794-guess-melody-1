@@ -6,7 +6,6 @@ import styled from "@emotion/styled";
 import * as Styles from "../../common.styles";
 
 import {GameAnswer} from "../../types.d";
-import {AppState} from "../../reducer";
 import GameScreen from "../game-screen";
 import WelcomeScreen from "../welcome-screen";
 import AppFooter from "../app-footer";
@@ -30,7 +29,7 @@ const AppMain = styled.main`
   ${Styles.container}
 `;
 
-export interface AppProps extends AppState {
+export interface AppProps {
   /** Переход к следующему шагу игры */
   handleStep: () => void;
   /** Обработка пользовательского ответа на вопрос */
