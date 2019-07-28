@@ -44,10 +44,7 @@ export const body = css`
     box-sizing: inherit;
   }
   html {
-    position: relative;
-    box-sizing: border-box;
-    height: 100%;
-    background: #1d121f linear-gradient(90deg, #1d121f, #270a17);
+    line-height: inherit;
   }
   body {
     font-family: "Fira Sans", "Arial", sans-serif;
@@ -57,6 +54,12 @@ export const body = css`
     color: #230d1a;
     margin: 0;
     padding: 0;
+    width: 100%;
+    background: #1d121f linear-gradient(90deg, #1d121f, #270a17);
+  }
+  .app {
+    width: 100vw;
+    height: 100vh;
   }
 `;
 
@@ -81,8 +84,33 @@ export const hidden = css`
 `;
 
 export const container = css`
-  max-width: 680px;
+  width: 680px;
   margin: 0 auto;
+`;
+
+export const button = css`
+  display: block;
+  padding: 5px 20px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #230d1a;
+  background-color: #f0eed5;
+  border: 3px solid #000;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px -5px #000;
+  cursor: pointer;
+
+  transition: ease-in-out 350ms;
+
+  &:disabled {
+    color: #808080;
+    border: 4px solid #ffc396;
+    cursor: default;
+  }
+  &:hover, &:focus, &:active {
+    color: #ff9749;
+    border-color: #ff9749;
+  }
 `;
 
 export const bounce = keyframes`
@@ -90,4 +118,20 @@ export const bounce = keyframes`
   70% { transform: translateY(30px); }
   90% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
+`;
+
+export const waiting = keyframes`
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1.05); }
+`;
+
+export const blink = keyframes`
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+`;
+
+export const shrink = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 `;
